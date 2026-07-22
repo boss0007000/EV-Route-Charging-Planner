@@ -1,0 +1,308 @@
+[
+  {
+    "name": "Mumbai, Maharashtra",
+    "lat": 19.076,
+    "lng": 72.8777,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Delhi, NCT",
+    "lat": 28.7041,
+    "lng": 77.1025,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Bengaluru, Karnataka",
+    "lat": 12.9716,
+    "lng": 77.5946,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Chennai, Tamil Nadu",
+    "lat": 13.0827,
+    "lng": 80.2707,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Hyderabad, Telangana",
+    "lat": 17.385,
+    "lng": 78.4867,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Pune, Maharashtra",
+    "lat": 18.5204,
+    "lng": 73.8567,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Kolkata, West Bengal",
+    "lat": 22.5726,
+    "lng": 88.3639,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Ahmedabad, Gujarat",
+    "lat": 23.0225,
+    "lng": 72.5714,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Jaipur, Rajasthan",
+    "lat": 26.9124,
+    "lng": 75.7873,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Surat, Gujarat",
+    "lat": 21.1702,
+    "lng": 72.8311,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Lucknow, Uttar Pradesh",
+    "lat": 26.8467,
+    "lng": 80.9462,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Kanpur, Uttar Pradesh",
+    "lat": 26.4499,
+    "lng": 80.3319,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Nagpur, Maharashtra",
+    "lat": 21.1458,
+    "lng": 79.0882,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Indore, Madhya Pradesh",
+    "lat": 22.7196,
+    "lng": 75.8577,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Bhopal, Madhya Pradesh",
+    "lat": 23.2599,
+    "lng": 77.4126,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Visakhapatnam, Andhra Pradesh",
+    "lat": 17.6868,
+    "lng": 83.2185,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Patna, Bihar",
+    "lat": 25.5941,
+    "lng": 85.1376,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Vadodara, Gujarat",
+    "lat": 22.3072,
+    "lng": 73.1812,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Coimbatore, Tamil Nadu",
+    "lat": 11.0168,
+    "lng": 76.9558,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Kochi, Kerala",
+    "lat": 9.9312,
+    "lng": 76.2673,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Chandigarh, Punjab",
+    "lat": 30.7333,
+    "lng": 76.7794,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Gurugram, Haryana",
+    "lat": 28.4595,
+    "lng": 77.0266,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Noida, Uttar Pradesh",
+    "lat": 28.5355,
+    "lng": 77.391,
+    "tag": "urban-dense"
+  },
+  {
+    "name": "Nashik, Maharashtra",
+    "lat": 19.9975,
+    "lng": 73.7898,
+    "tag": "rural-dense"
+  },
+  {
+    "name": "Rajkot, Gujarat",
+    "lat": 22.3039,
+    "lng": 70.8022,
+    "tag": "rural-dense"
+  },
+  {
+    "name": "Amritsar, Punjab",
+    "lat": 31.634,
+    "lng": 74.8723,
+    "tag": "rural-dense"
+  },
+  {
+    "name": "Varanasi, Uttar Pradesh",
+    "lat": 25.3176,
+    "lng": 82.9739,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Jodhpur, Rajasthan",
+    "lat": 26.2389,
+    "lng": 73.0243,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Udaipur, Rajasthan",
+    "lat": 24.5854,
+    "lng": 73.7125,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Shimla, Himachal Pradesh",
+    "lat": 31.1048,
+    "lng": 77.1734,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Manali, Himachal Pradesh",
+    "lat": 32.2432,
+    "lng": 77.1892,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Leh, Ladakh",
+    "lat": 34.1526,
+    "lng": 77.577,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Gangtok, Sikkim",
+    "lat": 27.3389,
+    "lng": 88.6065,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Shillong, Meghalaya",
+    "lat": 25.5788,
+    "lng": 91.8933,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Guwahati, Assam",
+    "lat": 26.1445,
+    "lng": 91.7362,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Bhubaneswar, Odisha",
+    "lat": 20.2961,
+    "lng": 85.8245,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Raipur, Chhattisgarh",
+    "lat": 21.2514,
+    "lng": 81.6296,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Ranchi, Jharkhand",
+    "lat": 23.3441,
+    "lng": 85.3096,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Dehradun, Uttarakhand",
+    "lat": 30.3165,
+    "lng": 78.0322,
+    "tag": "rural-dense"
+  },
+  {
+    "name": "Mysuru, Karnataka",
+    "lat": 12.2958,
+    "lng": 76.6394,
+    "tag": "rural-dense"
+  },
+  {
+    "name": "Madurai, Tamil Nadu",
+    "lat": 9.9252,
+    "lng": 78.1198,
+    "tag": "rural-dense"
+  },
+  {
+    "name": "Thiruvananthapuram, Kerala",
+    "lat": 8.5241,
+    "lng": 76.9366,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Goa (Panaji), Goa",
+    "lat": 15.4909,
+    "lng": 73.8278,
+    "tag": "rural-dense"
+  },
+  {
+    "name": "Agra, Uttar Pradesh",
+    "lat": 27.1767,
+    "lng": 78.0081,
+    "tag": "urban-sparse"
+  },
+  {
+    "name": "Srinagar, Jammu & Kashmir",
+    "lat": 34.0837,
+    "lng": 74.7973,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Jamshedpur, Jharkhand",
+    "lat": 22.8046,
+    "lng": 86.2029,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Puducherry",
+    "lat": 11.9416,
+    "lng": 79.8083,
+    "tag": "rural-dense"
+  },
+  {
+    "name": "Siliguri, West Bengal",
+    "lat": 26.7271,
+    "lng": 88.3953,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Kargil, Ladakh",
+    "lat": 34.5539,
+    "lng": 76.1349,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Pondicherry Rural Outpost",
+    "lat": 12.05,
+    "lng": 79.7,
+    "tag": "rural-sparse"
+  },
+  {
+    "name": "Rann of Kutch, Gujarat",
+    "lat": 23.85,
+    "lng": 69.5,
+    "tag": "rural-sparse"
+  }
+]

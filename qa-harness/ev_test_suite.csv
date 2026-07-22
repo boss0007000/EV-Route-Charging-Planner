@@ -1,0 +1,1001 @@
+Test ID,Config code,Start method,Start location,Destination,Route distance (km, approx),Start battery,Arrival charge (Charge To Target),Efficiency,Range (vehicle),Scenario class,Expected result
+1,S-M_B-U_A-U_E-U_R-U,manual,"Kochi, Kerala","Jamshedpur, Jharkhand",347.0,10,93,374,XPeng G6 (328 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+2,S-M_B-D_A-U_E-D_R-U,manual,"Hyderabad, Telangana","Shimla, Himachal Pradesh",1260.0,80,58,172,Mercedes-Benz EQS / EQS SUV (617 km),EDGE_LONG_TRIP,Route succeeds with 4 charging stops.
+3,S-M_B-U_A-U_E-U_R-U,manual,"Vadodara, Gujarat","Visakhapatnam, Andhra Pradesh",13.0,40,85,397,Kia EV9 (387 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+4,S-M_B-U_A-U_E-U_R-D,manual,"Thiruvananthapuram, Kerala","Goa (Panaji), Goa",888.9,100,95,158,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+5,S-M_B-D_A-D_E-U_R-D,manual,"Siliguri, West Bengal","Madurai, Tamil Nadu",6.9,80,80,297,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+6,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+7,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",16.0,80,63,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+8,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Surat, Gujarat",1365.0,80,80,153,Dongfeng Box (176 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+9,S-M_B-D_A-D_E-U_R-D,manual,"Patna, Bihar","Goa (Panaji), Goa",243.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+10,S-M_B-U_A-D_E-D_R-D,manual,Pondicherry Rural Outpost,"Lucknow, Uttar Pradesh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""-10"") rejected; default 80% retained, route proceeds at 80%."
+11,S-M_B-U_A-U_E-D_R-D,manual,"Goa (Panaji), Goa","Siliguri, West Bengal",361.1,100,66,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+12,S-M_B-D_A-U_E-D_R-U,manual,"Gurugram, Haryana","Varanasi, Uttar Pradesh",1048.6,80,98,160,BYD M6 (281 km),MULTI_STOP,Route succeeds with 4 charging stops.
+13,S-M_B-D_A-D_E-D_R-D,manual,"Kanpur, Uttar Pradesh","Leh, Ladakh",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+14,S-M_B-U_A-D_E-D_R-U,manual,"Jaipur, Rajasthan","Bhopal, Madhya Pradesh",34.7,70,80,157,Dongfeng Nammi 01 (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+15,S-M_B-U_A-U_E-U_R-D,manual,"Raipur, Chhattisgarh","Visakhapatnam, Andhra Pradesh",139.0,8,79,139,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+16,S-M_B-D_A-U_E-U_R-U,manual,"Bhopal, Madhya Pradesh","Gurugram, Haryana",5.9,80,54,320,Mercedes-Benz EQB (346 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+17,S-M_B-D_A-U_E-D_R-D,manual,"Dehradun, Uttarakhand","Varanasi, Uttar Pradesh",20.0,80,93,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+18,S-M_B-U_A-U_E-U_R-U,manual,"Delhi, NCT","Siliguri, West Bengal",306.1,90,57,367,BYD Atto 3 (351 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+19,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Delhi, NCT",44.0,2,80,191,Kia EV9 (387 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+20,S-M_B-U_A-D_E-U_R-U,manual,"Nagpur, Maharashtra","Chennai, Tamil Nadu",46.8,90,80,230,BYD Atto 3 (378 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+21,S-M_B-D_A-D_E-D_R-D,manual,"Noida, Uttar Pradesh","Bhubaneswar, Odisha",354.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+22,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Leh, Ladakh",1313.5,80,72,309,GAC Aion Aion V (459 km),MULTI_STOP,Route succeeds with 4 charging stops.
+23,S-M_B-U_A-U_E-D_R-U,manual,"Shillong, Meghalaya","Kanpur, Uttar Pradesh",201.0,70,51,153,Dongfeng Box (176 km),MULTI_STOP,Route succeeds with 2 charging stops.
+24,S-M_B-D_A-D_E-D_R-D,manual,"Agra, Uttar Pradesh","Manali, Himachal Pradesh",6.3,80,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+25,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",263.4,80,66,285,Audi Q8 e-tron (383 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+26,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Goa (Panaji), Goa",6.0,80,63,221,Riddara RD6 (338 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+27,S-M_B-U_A-D_E-D_R-D,manual,"Ahmedabad, Gujarat","Goa (Panaji), Goa",311.0,1,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+28,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Manali, Himachal Pradesh",96.3,80,80,230,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+29,S-M_B-U_A-U_E-U_R-U,manual,"Rajkot, Gujarat","Madurai, Tamil Nadu",334.9,70,79,393,Audi Q4 e-tron (355 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+30,S-M_B-U_A-D_E-D_R-D,manual,"Noida, Uttar Pradesh","Jamshedpur, Jharkhand",118.0,1,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+31,S-M_B-U_A-D_E-D_R-D,manual,"Rajkot, Gujarat","Pune, Maharashtra",182.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+32,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Kolkata, West Bengal",26.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+33,S-M_B-U_A-U_E-U_R-U,manual,"Bhubaneswar, Odisha","Siliguri, West Bengal",264.0,1,78,201,DENZA D9 (454 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+34,S-M_B-U_A-D_E-D_R-D,manual,"Nashik, Maharashtra","Siliguri, West Bengal",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""abc"") rejected; default 80% retained, route proceeds at 80%."
+35,S-M_B-D_A-D_E-D_R-D,manual,"Jamshedpur, Jharkhand","Kanpur, Uttar Pradesh",192.2,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+36,S-M_B-D_A-D_E-D_R-D,manual,"Rann of Kutch, Gujarat","Chennai, Tamil Nadu",1433.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+37,S-M_B-D_A-D_E-U_R-D,manual,"Vadodara, Gujarat","Mumbai, Maharashtra",325.0,80,80,124,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+38,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Patna, Bihar",126.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+39,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Goa (Panaji), Goa",239.0,1,74,131,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+40,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",7.0,80,80,294,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+41,S-M_B-U_A-U_E-D_R-D,manual,"Patna, Bihar","Chandigarh, Punjab",195.1,50,69,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+42,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Goa (Panaji), Goa",220.0,80,80,342,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+43,S-M_B-D_A-U_E-D_R-U,manual,"Siliguri, West Bengal","Shimla, Himachal Pradesh",16.0,80,99,154,GWM Ora Ora 03 (257 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+44,S-M_B-U_A-D_E-D_R-D,manual,"Shimla, Himachal Pradesh","Goa (Panaji), Goa",301.0,10,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+45,S-M_B-U_A-U_E-D_R-U,manual,"Chennai, Tamil Nadu","Pune, Maharashtra",18.0,20,65,192,Mercedes-Benz EQA (312 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+46,S-M_B-U_A-D_E-U_R-D,manual,"Leh, Ladakh","Dehradun, Uttarakhand",1594.0,100,80,189,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+47,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Udaipur, Rajasthan",162.9,80,81,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+48,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",10.3,50,78,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+49,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Kolkata, West Bengal",147.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+50,S-M_B-D_A-D_E-D_R-D,manual,"Mumbai, Maharashtra","Amritsar, Punjab",668.3,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+51,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),Pondicherry Rural Outpost,1764.0,80,60,183,GAC Aion Aion V (459 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+52,S-M_B-D_A-U_E-D_R-D,manual,"Lucknow, Uttar Pradesh","Gangtok, Sikkim",20.5,80,60,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+53,S-M_B-U_A-D_E-D_R-D,manual,"Rajkot, Gujarat","Bhubaneswar, Odisha",166.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+54,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Indore, Madhya Pradesh",40.9,80,93,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+55,S-M_B-U_A-U_E-U_R-U,manual,"Hyderabad, Telangana","Ranchi, Jharkhand",445.5,90,78,383,MG MG4 (312 km),MULTI_STOP,Route succeeds with 2 charging stops.
+56,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Mumbai, Maharashtra",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""-10"") rejected; default 80% retained, route proceeds at 80%."
+57,S-M_B-U_A-U_E-U_R-U,manual,"Mumbai, Maharashtra","Visakhapatnam, Andhra Pradesh",6.2,70,56,314,Mercedes-Benz EQE / EQE SUV (499 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+58,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Chandigarh, Punjab",70.3,60,92,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+59,S-M_B-U_A-D_E-D_R-U,manual,"Srinagar, Jammu & Kashmir","Agra, Uttar Pradesh",251.8,90,80,140,Dongfeng Vigo EV (321 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+60,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Udaipur, Rajasthan",12.0,80,98,382,Mercedes-Benz EQB (346 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+61,S-M_B-D_A-U_E-D_R-D,manual,"Madurai, Tamil Nadu","Mumbai, Maharashtra",251.8,80,75,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+62,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Shimla, Himachal Pradesh",30.8,80,51,205,DENZA D9 (454 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+63,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),,100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Choose a destination from the suggestions list.
+64,S-M_B-D_A-D_E-D_R-D,manual,"Nagpur, Maharashtra","Kargil, Ladakh",381.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 3 charging stops.
+65,S-M_B-D_A-U_E-U_R-D,manual,"Varanasi, Uttar Pradesh","Nashik, Maharashtra",71.3,80,86,381,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+66,S-M_B-D_A-D_E-D_R-D,manual,"Vadodara, Gujarat","Leh, Ladakh",240.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+67,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Vadodara, Gujarat",13.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+68,S-M_B-D_A-U_E-D_R-U,manual,"Lucknow, Uttar Pradesh",Puducherry,244.4,80,55,147,MG MG4 (312 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+69,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",47.6,90,70,188,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+70,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Kargil, Ladakh",294.0,5,76,238,IM Motors IM5 (353 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+71,S-M_B-U_A-D_E-U_R-U,manual,"Hyderabad, Telangana","Varanasi, Uttar Pradesh",323.0,1,80,305,Kia EV5 (360 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+72,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",699.1,70,80,259,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+73,S-M_B-D_A-U_E-D_R-U,manual,"Rajkot, Gujarat","Bhubaneswar, Odisha",1648.0,80,61,173,Mahindra XEV 9e (391 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+74,S-M_B-U_A-D_E-D_R-U,manual,"Jodhpur, Rajasthan","Bhopal, Madhya Pradesh",619.9,70,80,195,Kia EV5 (360 km),MULTI_STOP,Route succeeds with 2 charging stops.
+75,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Goa (Panaji), Goa",1572.0,80,58,379,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+76,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Ahmedabad, Gujarat",306.1,80,50,116,Tesla Model 3 (446 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+77,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Jodhpur, Rajasthan",52.0,60,80,146,BYD Seal (378 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+78,S-M_B-U_A-U_E-D_R-D,manual,"Thiruvananthapuram, Kerala","Nashik, Maharashtra",346.0,2,51,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,RouteTooLongError expected (needs >5 stops).
+79,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Kanpur, Uttar Pradesh",445.5,70,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+80,S-M_B-D_A-D_E-D_R-D,manual,"Siliguri, West Bengal","Bengaluru, Karnataka",13.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+81,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Leh, Ladakh",1553.0,100,80,176,GAC Aion Aion V (459 km),EDGE_LONG_TRIP,Route succeeds with 4 charging stops.
+82,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Goa (Panaji), Goa",13.1,80,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+83,S-M_B-D_A-U_E-D_R-D,manual,"Jaipur, Rajasthan","Visakhapatnam, Andhra Pradesh",60.5,80,89,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+84,S-M_B-D_A-U_E-D_R-D,manual,"Shimla, Himachal Pradesh","Dehradun, Uttarakhand",776.6,80,95,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+85,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Gurugram, Haryana",327.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 3 charging stops.
+86,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),Pondicherry Rural Outpost,298.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+87,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Ranchi, Jharkhand",285.0,10,83,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+88,S-M_B-D_A-D_E-U_R-D,manual,"Rajkot, Gujarat","Mumbai, Maharashtra",310.7,80,80,129,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+89,S-M_B-D_A-U_E-U_R-U,manual,"Kolkata, West Bengal","Varanasi, Uttar Pradesh",1648.0,80,73,122,Kia EV6 (383 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+90,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",340.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+91,S-M_B-D_A-D_E-D_R-D,manual,"Srinagar, Jammu & Kashmir","Raipur, Chhattisgarh",334.9,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+92,S-M_B-D_A-U_E-D_R-D,manual,Pondicherry Rural Outpost,"Jaipur, Rajasthan",401.1,80,62,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+93,S-M_B-D_A-U_E-U_R-D,manual,"Coimbatore, Tamil Nadu","Udaipur, Rajasthan",126.2,80,68,287,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+94,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Bhopal, Madhya Pradesh",320.2,100,80,391,BYD M6 (281 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+95,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Siliguri, West Bengal",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+96,S-M_B-U_A-U_E-D_R-U,manual,"Noida, Uttar Pradesh","Kochi, Kerala",944.0,50,86,146,BYD Seal (378 km),MULTI_STOP,Route succeeds with 4 charging stops.
+97,S-M_B-D_A-U_E-D_R-D,manual,"Chandigarh, Punjab","Jamshedpur, Jharkhand",216.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+98,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),,101.3,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Choose a destination from the suggestions list.
+99,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),,100.6,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Choose a destination from the suggestions list.
+100,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",35.2,80,79,105,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+101,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Mumbai, Maharashtra",480.3,90,80,173,Seres Seres 3 (260 km),MULTI_STOP,Route succeeds with 2 charging stops.
+102,S-M_B-D_A-U_E-D_R-D,manual,"Bhopal, Madhya Pradesh","Rajkot, Gujarat",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""150"") rejected; default 80% retained."
+103,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Gurugram, Haryana",251.8,80,65,190,Deepal S07 (368 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+104,S-M_B-U_A-D_E-U_R-U,manual,"Delhi, NCT","Ranchi, Jharkhand",987.5,70,80,207,Mahindra BE 6 (392 km),MULTI_STOP,Route succeeds with 4 charging stops.
+105,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Bhubaneswar, Odisha",259.5,100,56,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+106,S-M_B-D_A-U_E-U_R-D,manual,"Ranchi, Jharkhand","Coimbatore, Tamil Nadu",407.2,80,65,306,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+107,S-M_B-U_A-U_E-U_R-D,manual,"Chennai, Tamil Nadu","Patna, Bihar",8.0,40,60,256,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+108,S-M_B-D_A-D_E-U_R-U,manual,"Gangtok, Sikkim","Lucknow, Uttar Pradesh",610.7,80,80,251,Riddara RD6 (338 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+109,S-M_B-U_A-U_E-U_R-D,manual,"Hyderabad, Telangana",Pondicherry Rural Outpost,502.4,90,68,161,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+110,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Shillong, Meghalaya",100.0,80,80,180,N/A (no vehicle),INVALID_INPUT,Rejected: Select your vehicle to continue.
+111,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Kanpur, Uttar Pradesh",136.0,70,56,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+112,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Bhubaneswar, Odisha",9.0,20,80,124,Deepal Lumin (189 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+113,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Leh, Ladakh",25.0,1,80,294,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+114,S-M_B-U_A-U_E-D_R-D,manual,"Goa (Panaji), Goa","Kolkata, West Bengal",15.9,50,52,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+115,S-M_B-D_A-U_E-D_R-U,manual,"Guwahati, Assam","Nashik, Maharashtra",12.7,80,54,195,Audi Q4 e-tron (355 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+116,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Jodhpur, Rajasthan",8.2,80,58,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+117,S-M_B-D_A-U_E-D_R-D,manual,"Jamshedpur, Jharkhand","Pune, Maharashtra",359.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 3 charging stops.
+118,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",123.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+119,S-M_B-D_A-D_E-D_R-U,manual,"Siliguri, West Bengal","Coimbatore, Tamil Nadu",39.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+120,S-M_B-U_A-U_E-D_R-U,manual,"Bhopal, Madhya Pradesh","Vadodara, Gujarat",259.0,1,89,190,Deepal S07 (368 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+121,S-M_B-U_A-D_E-U_R-U,manual,"Vadodara, Gujarat","Amritsar, Punjab",342.0,1,80,176,Deepal Lumin (189 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+122,S-M_B-D_A-U_E-D_R-U,manual,"Ranchi, Jharkhand","Lucknow, Uttar Pradesh",230.1,80,51,155,BYD Atto 3 (351 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+123,S-M_B-U_A-U_E-U_R-D,manual,"Siliguri, West Bengal","Rann of Kutch, Gujarat",379.0,1,79,151,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+124,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Shimla, Himachal Pradesh",6.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+125,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",8.7,40,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+126,S-M_B-D_A-U_E-U_R-D,manual,"Siliguri, West Bengal","Dehradun, Uttarakhand",6.0,80,72,151,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+127,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Pune, Maharashtra",366.5,100,80,156,BMW i4 (369 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+128,S-M_B-U_A-D_E-D_R-D,manual,"Jamshedpur, Jharkhand","Vadodara, Gujarat",104.0,2,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+129,S-M_B-U_A-U_E-D_R-D,manual,"Ranchi, Jharkhand","Rajkot, Gujarat",99.3,90,83,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+130,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Indore, Madhya Pradesh",6.0,20,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+131,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Ahmedabad, Gujarat",316.0,1,80,290,BYD M6 (281 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+132,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Pune, Maharashtra",235.0,5,80,396,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+133,S-M_B-U_A-U_E-D_R-U,manual,"Nashik, Maharashtra",Puducherry,173.0,5,68,192,Mercedes-Benz EQA (312 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+134,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),Puducherry,246.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+135,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Goa (Panaji), Goa",271.4,80,57,132,Hyundai Ioniq Electric / Kona Electric (245 km),MULTI_STOP,Route succeeds with 2 charging stops.
+136,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Mumbai, Maharashtra",14.0,80,80,220,Mercedes-Benz EQE / EQE SUV (499 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+137,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Nashik, Maharashtra",812.3,70,74,195,Kia EV5 (360 km),MULTI_STOP,Route succeeds with 3 charging stops.
+138,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Kargil, Ladakh",377.7,90,80,212,BMW iX3 (347 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+139,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Noida, Uttar Pradesh",688.7,90,80,261,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+140,S-M_B-D_A-U_E-D_R-D,manual,"Mumbai, Maharashtra","Siliguri, West Bengal",259.5,80,83,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+141,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Indore, Madhya Pradesh",59.0,2,55,195,Audi Q4 e-tron (355 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+142,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",619.9,80,80,118,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+143,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",100.0,80,80,xyz,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+144,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Chennai, Tamil Nadu",170.4,80,86,157,Dongfeng Nammi 01 (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+145,S-M_B-U_A-D_E-U_R-D,manual,"Gurugram, Haryana","Kanpur, Uttar Pradesh",297.0,1,80,307,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+146,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",5.8,80,80,143,Tesla Model Y (346 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+147,S-M_B-D_A-U_E-D_R-D,manual,"Pune, Maharashtra","Mysuru, Karnataka",334.9,80,69,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+148,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Manali, Himachal Pradesh",487.5,70,98,160,BYD M6 (281 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+149,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Siliguri, West Bengal",189.3,80,80,159,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+150,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Guwahati, Assam",198.0,90,80,355,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+151,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Agra, Uttar Pradesh",5.9,90,53,143,Tesla Model Y (346 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+152,S-M_B-D_A-D_E-U_R-U,manual,"Goa (Panaji), Goa",Puducherry,6.0,80,80,296,Seres Seres 3 (260 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+153,S-M_B-D_A-D_E-D_R-D,manual,"Agra, Uttar Pradesh","Thiruvananthapuram, Kerala",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Arrival-Battery-Target keystroke (""90"") rejected; default 15% retained."
+154,S-M_B-D_A-D_E-U_R-D,manual,"Jamshedpur, Jharkhand","Bengaluru, Karnataka",160.5,80,80,375,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+155,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Jodhpur, Rajasthan",13.0,80,80,155,BYD Atto 3 (351 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+156,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Agra, Uttar Pradesh",260.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+157,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Leh, Ladakh",274.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+158,S-M_B-D_A-U_E-D_R-D,manual,"Noida, Uttar Pradesh","Rajkot, Gujarat",678.4,80,97,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+159,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Bhubaneswar, Odisha",1463.0,80,96,335,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+160,S-M_B-D_A-D_E-D_R-D,manual,"Amritsar, Punjab","Vadodara, Gujarat",401.1,80,80,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+161,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Udaipur, Rajasthan",320.2,80,98,330,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+162,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Udaipur, Rajasthan",1341.0,100,80,140,Dongfeng Vigo EV (321 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+163,S-M_B-U_A-D_E-D_R-D,manual,"Madurai, Tamil Nadu","Raipur, Chhattisgarh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""150"") rejected; default 80% retained, route proceeds at 80%."
+164,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Madurai, Tamil Nadu",167.9,60,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+165,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Ranchi, Jharkhand",151.0,5,53,293,GWM Ora Ora 03 (257 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+166,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Indore, Madhya Pradesh",8.0,80,94,374,Tesla Model Y (346 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+167,S-M_B-U_A-U_E-D_R-U,manual,"Gurugram, Haryana","Rann of Kutch, Gujarat",502.4,90,85,108,Tata Tiago EV (160 km),MULTI_STOP,Route succeeds with 4 charging stops.
+168,S-M_B-D_A-U_E-D_R-D,manual,"Bhubaneswar, Odisha","Varanasi, Uttar Pradesh",10.8,80,76,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+169,S-M_B-U_A-D_E-U_R-U,manual,"Visakhapatnam, Andhra Pradesh","Chennai, Tamil Nadu",31.0,8,80,389,BYD Atto 2 (256 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+170,S-M_B-U_A-D_E-D_R-D,manual,"Dehradun, Uttarakhand","Chennai, Tamil Nadu",63.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+171,S-M_B-U_A-U_E-D_R-D,manual,"Gangtok, Sikkim","Dehradun, Uttarakhand",291.0,5,57,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 4 charging stops.
+172,S-M_B-D_A-D_E-U_R-D,manual,"Gangtok, Sikkim","Shillong, Meghalaya",100.0,80,80,0,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+173,S-M_B-U_A-D_E-U_R-U,manual,"Raipur, Chhattisgarh","Gurugram, Haryana",375.0,10,80,261,Toyota bZ4X (311 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+174,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Bhubaneswar, Odisha",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Arrival-Battery-Target keystroke (""90"") rejected; default 15% retained."
+175,S-M_B-U_A-D_E-D_R-U,manual,"Mysuru, Karnataka","Madurai, Tamil Nadu",373.0,8,80,156,BMW i4 (369 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+176,S-M_B-D_A-D_E-D_R-D,manual,"Madurai, Tamil Nadu","Nagpur, Maharashtra",361.1,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+177,S-M_B-U_A-D_E-D_R-D,manual,"Bengaluru, Karnataka","Chennai, Tamil Nadu",255.6,90,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+178,S-M_B-D_A-D_E-U_R-D,manual,"Mumbai, Maharashtra","Bhubaneswar, Odisha",1467.0,80,80,202,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+179,S-M_B-D_A-D_E-U_R-U,manual,"Coimbatore, Tamil Nadu","Manali, Himachal Pradesh",7.2,80,80,255,Seres Seres 3 (260 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+180,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Gurugram, Haryana",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""150"") rejected; default 80% retained, route proceeds at 80%."
+181,S-M_B-D_A-U_E-U_R-U,manual,"Kochi, Kerala","Jamshedpur, Jharkhand",301.5,80,71,356,Omoda E5 (278 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+182,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Surat, Gujarat",9.0,60,75,275,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+183,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Shimla, Himachal Pradesh",1214.0,100,80,310,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+184,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Kochi, Kerala",1778.0,80,93,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+185,S-M_B-U_A-D_E-D_R-D,manual,"Vadodara, Gujarat","Goa (Panaji), Goa",20.0,20,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+186,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Amritsar, Punjab",18.7,50,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+187,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Jaipur, Rajasthan",1635.0,80,80,108,Tata Tiago EV (160 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+188,S-M_B-D_A-U_E-U_R-D,manual,"Rajkot, Gujarat","Mysuru, Karnataka",419.6,80,88,327,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+189,S-M_B-D_A-D_E-D_R-U,manual,"Bhopal, Madhya Pradesh","Indore, Madhya Pradesh",17.0,80,80,173,Seres Seres 3 (260 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+190,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Manali, Himachal Pradesh",103.8,30,53,285,BYD Atto 3 (378 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+191,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",315.4,70,80,300,Audi Q4 e-tron (355 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+192,S-M_B-D_A-D_E-D_R-D,manual,"Indore, Madhya Pradesh","Delhi, NCT",275.5,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+193,S-M_B-U_A-D_E-D_R-D,manual,Pondicherry Rural Outpost,"Lucknow, Uttar Pradesh",257.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+194,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",30.3,80,73,104,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+195,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Udaipur, Rajasthan",8.6,80,75,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+196,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Bengaluru, Karnataka",17.0,20,55,173,Seres Seres 3 (260 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+197,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Bengaluru, Karnataka",244.0,8,70,283,IM Motors IM5 (353 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+198,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",15.4,80,80,199,Mercedes-Benz EQB (346 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+199,S-M_B-D_A-U_E-U_R-D,manual,"Indore, Madhya Pradesh","Chandigarh, Punjab",306.1,80,59,203,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+200,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Pune, Maharashtra",207.0,2,94,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+201,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Jaipur, Rajasthan",93.5,60,80,142,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+202,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Madurai, Tamil Nadu",286.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+203,S-M_B-D_A-D_E-U_R-U,manual,"Coimbatore, Tamil Nadu","Bhopal, Madhya Pradesh",22.4,80,80,323,Hyundai Ioniq 5 (387 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+204,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Noida, Uttar Pradesh",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+205,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Jaipur, Rajasthan",0.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Route succeeds with 0 charging stops (distance ~0 km) — not rejected by validation (ground-truth gap, not a bug per se)."
+206,S-M_B-U_A-U_E-D_R-D,manual,"Madurai, Tamil Nadu","Surat, Gujarat",7.0,20,89,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+207,S-M_B-U_A-U_E-U_R-U,manual,Pondicherry Rural Outpost,"Indore, Madhya Pradesh",270.0,10,87,199,Dongfeng Nammi 01 (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+208,S-M_B-U_A-U_E-D_R-U,manual,"Nagpur, Maharashtra",Puducherry,140.2,50,89,180,Hyundai Ioniq 5 (387 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+209,S-M_B-D_A-D_E-U_R-D,manual,"Varanasi, Uttar Pradesh","Nagpur, Maharashtra",288.2,80,80,245,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+210,S-M_B-U_A-D_E-U_R-U,manual,"Indore, Madhya Pradesh","Kargil, Ladakh",230.1,70,80,198,Tata Tiago EV (160 km),MULTI_STOP,Route succeeds with 2 charging stops.
+211,S-M_B-U_A-D_E-D_R-D,manual,"Goa (Panaji), Goa","Hyderabad, Telangana",269.0,5,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+212,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Raipur, Chhattisgarh",875.7,70,75,167,Nissan Ariya (340 km),MULTI_STOP,Route succeeds with 4 charging stops.
+213,S-M_B-D_A-U_E-D_R-D,manual,"Bengaluru, Karnataka","Manali, Himachal Pradesh",18.0,80,77,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+214,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Udaipur, Rajasthan",17.1,90,80,187,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+215,S-M_B-U_A-D_E-D_R-U,manual,"Nashik, Maharashtra","Dehradun, Uttarakhand",1944.0,100,80,173,Mercedes-Benz EQE / EQE SUV (499 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+216,S-M_B-D_A-U_E-D_R-D,manual,"Chennai, Tamil Nadu","Jodhpur, Rajasthan",248.1,80,72,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+217,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Jodhpur, Rajasthan",395.1,100,99,185,Toyota bZ4X (311 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+218,S-M_B-D_A-U_E-D_R-U,manual,"Jodhpur, Rajasthan","Ahmedabad, Gujarat",1333.0,80,65,190,Deepal S07 (368 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+219,S-M_B-D_A-D_E-U_R-D,manual,"Indore, Madhya Pradesh","Kargil, Ladakh",1584.0,80,80,355,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+220,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Kochi, Kerala",23.5,80,80,133,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+221,S-M_B-D_A-D_E-D_R-U,manual,"Vadodara, Gujarat","Kolkata, West Bengal",1404.0,80,80,150,Mahindra BE 6 (451 km),EDGE_LONG_TRIP,Route succeeds with 4 charging stops.
+222,S-M_B-U_A-D_E-D_R-D,manual,"Chennai, Tamil Nadu","Jaipur, Rajasthan",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""-10"") rejected; default 80% retained, route proceeds at 80%."
+223,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Noida, Uttar Pradesh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""-10"") rejected; default 80% retained, route proceeds at 80%."
+224,S-M_B-U_A-D_E-D_R-U,manual,"Udaipur, Rajasthan","Pune, Maharashtra",275.0,1,80,137,BYD Atto 1 (197 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+225,S-M_B-D_A-U_E-U_R-U,manual,"Jamshedpur, Jharkhand","Patna, Bihar",130.1,80,89,270,BYD Seal (387 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+226,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",266.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+227,S-M_B-U_A-D_E-U_R-U,manual,"Udaipur, Rajasthan","Mysuru, Karnataka",1980.0,60,80,299,Mercedes-Benz EQE / EQE SUV (499 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+228,S-M_B-D_A-U_E-U_R-D,manual,"Raipur, Chhattisgarh","Pune, Maharashtra",5.4,80,60,155,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+229,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",30.3,80,80,110,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+230,S-M_B-D_A-U_E-U_R-U,manual,"Ranchi, Jharkhand","Guwahati, Assam",1904.0,80,91,296,IM Motors IM5 (353 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+231,S-M_B-D_A-D_E-U_R-U,manual,"Leh, Ladakh","Jamshedpur, Jharkhand",466.1,80,80,334,Mercedes-Benz EQE / EQE SUV (499 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+232,S-M_B-D_A-D_E-U_R-D,manual,Puducherry,"Ahmedabad, Gujarat",128.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+233,S-M_B-D_A-D_E-U_R-D,manual,"Gurugram, Haryana","Visakhapatnam, Andhra Pradesh",8.0,80,80,377,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+234,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",213.5,80,80,219,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+235,S-M_B-D_A-D_E-D_R-U,manual,"Chandigarh, Punjab","Madurai, Tamil Nadu",800.2,80,80,173,Seres Seres 3 (260 km),MULTI_STOP,Route succeeds with 4 charging stops.
+236,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Dehradun, Uttarakhand",510.0,50,65,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+237,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),Pondicherry Rural Outpost,1476.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+238,S-M_B-U_A-U_E-U_R-U,manual,"Madurai, Tamil Nadu","Kolkata, West Bengal",293.0,2,86,198,Tesla Model Y (346 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+239,S-M_B-D_A-U_E-D_R-D,manual,"Jodhpur, Rajasthan","Chandigarh, Punjab",160.5,80,95,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+240,S-M_B-D_A-D_E-U_R-U,manual,"Manali, Himachal Pradesh","Ahmedabad, Gujarat",1480.0,80,80,257,Deepal S07 (368 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+241,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",1850.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+242,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Gangtok, Sikkim",78.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+243,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Shimla, Himachal Pradesh",16.0,60,80,132,Hyundai Ioniq Electric / Kona Electric (245 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+244,S-M_B-D_A-U_E-D_R-U,manual,"Noida, Uttar Pradesh","Lucknow, Uttar Pradesh",11.2,80,100,173,Mercedes-Benz EQB (346 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+245,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Hyderabad, Telangana",1437.0,80,81,398,Tesla Model Y (346 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+246,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Udaipur, Rajasthan",271.4,80,70,157,Dongfeng Nammi 01 (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+247,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Surat, Gujarat",222.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+248,S-M_B-U_A-D_E-D_R-D,manual,"Amritsar, Punjab","Visakhapatnam, Andhra Pradesh",250.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+249,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Raipur, Chhattisgarh",16.0,80,74,209,XPeng G6 (433 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+250,S-M_B-U_A-D_E-D_R-D,manual,"Guwahati, Assam","Varanasi, Uttar Pradesh",129.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+251,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Vadodara, Gujarat",701.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+252,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",207.2,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+253,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Indore, Madhya Pradesh",1706.0,80,80,381,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+254,S-M_B-D_A-U_E-U_R-U,manual,"Kochi, Kerala","Mysuru, Karnataka",165.4,80,98,282,Dongfeng Nammi 01 (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+255,S-M_B-U_A-D_E-U_R-U,manual,"Agra, Uttar Pradesh","Raipur, Chhattisgarh",68.0,1,80,256,Deepal S05 (321 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+256,S-M_B-U_A-U_E-D_R-U,manual,"Kanpur, Uttar Pradesh","Nagpur, Maharashtra",452.3,50,65,173,Mercedes-Benz EQB (346 km),MULTI_STOP,Route succeeds with 2 charging stops.
+257,S-M_B-U_A-D_E-U_R-U,manual,"Goa (Panaji), Goa","Mumbai, Maharashtra",140.2,50,80,143,Tata Curvv EV (307 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+258,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Chandigarh, Punjab",73.5,60,67,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+259,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Gurugram, Haryana",541.6,80,80,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+260,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Patna, Bihar",407.2,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+261,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Guwahati, Assam",333.0,2,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+262,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Gurugram, Haryana",610.7,100,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+263,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Bengaluru, Karnataka",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+264,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Raipur, Chhattisgarh",16.0,40,98,170,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+265,S-M_B-D_A-D_E-U_R-U,manual,"Goa (Panaji), Goa",Pondicherry Rural Outpost,533.5,80,80,210,BYD Atto 1 (197 km),MULTI_STOP,Route succeeds with 4 charging stops.
+266,S-M_B-D_A-D_E-D_R-D,manual,"Thiruvananthapuram, Kerala","Mumbai, Maharashtra",259.5,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+267,S-M_B-D_A-U_E-D_R-D,manual,"Kargil, Ladakh","Kanpur, Uttar Pradesh",374.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 3 charging stops.
+268,S-M_B-U_A-D_E-D_R-U,manual,"Mumbai, Maharashtra","Ahmedabad, Gujarat",70.3,100,80,173,Seres Seres 3 (260 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+269,S-M_B-D_A-D_E-D_R-U,manual,"Ranchi, Jharkhand","Manali, Himachal Pradesh",564.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+270,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Noida, Uttar Pradesh",1967.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+271,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Indore, Madhya Pradesh",1763.0,60,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+272,S-M_B-U_A-D_E-D_R-D,manual,"Ranchi, Jharkhand",Pondicherry Rural Outpost,549.8,100,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+273,S-M_B-U_A-D_E-D_R-D,manual,"Siliguri, West Bengal","Manali, Himachal Pradesh",117.1,60,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+274,S-M_B-D_A-D_E-D_R-D,manual,"Thiruvananthapuram, Kerala","Ahmedabad, Gujarat",297.0,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+275,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",340.0,50,78,248,Audi Q8 e-tron (383 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+276,S-M_B-U_A-D_E-U_R-D,manual,"Agra, Uttar Pradesh","Gangtok, Sikkim",385.0,2,80,193,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+277,S-M_B-D_A-U_E-D_R-D,manual,"Hyderabad, Telangana","Siliguri, West Bengal",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""150"") rejected; default 80% retained."
+278,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Raipur, Chhattisgarh",1048.6,90,80,181,IM Motors IM5 (353 km),MULTI_STOP,Route succeeds with 4 charging stops.
+279,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Indore, Madhya Pradesh",1204.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+280,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Madurai, Tamil Nadu",29.0,80,80,117,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+281,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Raipur, Chhattisgarh",438.9,90,80,240,Kia EV6 (383 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+282,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""150"") rejected; default 80% retained."
+283,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",170.4,80,94,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+284,S-M_B-U_A-D_E-D_R-D,manual,"Vadodara, Gujarat","Bhubaneswar, Odisha",318.0,2,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+285,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",6.8,80,63,266,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+286,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Vadodara, Gujarat",167.9,80,72,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+287,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Rajkot, Gujarat",19.0,80,83,390,Mahindra BE 6 (451 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+288,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Madurai, Tamil Nadu",230.1,80,80,179,XPeng G6 (328 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+289,S-M_B-U_A-D_E-D_R-D,manual,"Mysuru, Karnataka","Rann of Kutch, Gujarat",566.5,60,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+290,S-M_B-U_A-D_E-D_R-D,manual,"Guwahati, Assam","Rann of Kutch, Gujarat",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""150"") rejected; default 80% retained, route proceeds at 80%."
+291,S-M_B-U_A-U_E-U_R-U,manual,"Kanpur, Uttar Pradesh","Dehradun, Uttarakhand",1920.0,60,95,376,Nissan Leaf (336 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+292,S-M_B-D_A-U_E-D_R-D,manual,"Coimbatore, Tamil Nadu","Kolkata, West Bengal",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""20"") rejected; default 80% retained."
+293,S-M_B-U_A-D_E-D_R-D,manual,"Chennai, Tamil Nadu","Bhopal, Madhya Pradesh",121.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+294,S-M_B-D_A-U_E-D_R-D,manual,"Siliguri, West Bengal","Surat, Gujarat",156.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+295,S-M_B-U_A-D_E-U_R-D,manual,"Rann of Kutch, Gujarat","Lucknow, Uttar Pradesh",30.0,2,80,109,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+296,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Nagpur, Maharashtra",1600.0,80,80,283,GAC Aion Aion V (459 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+297,S-M_B-D_A-D_E-D_R-D,manual,"Visakhapatnam, Andhra Pradesh","Srinagar, Jammu & Kashmir",188.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+298,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Udaipur, Rajasthan",1182.4,80,97,114,IM Motors IM5 (353 km),MULTI_STOP,Route succeeds with 4 charging stops.
+299,S-M_B-U_A-D_E-U_R-D,manual,"Rann of Kutch, Gujarat","Hyderabad, Telangana",156.0,2,80,273,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+300,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",763.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+301,S-M_B-D_A-D_E-U_R-D,manual,"Chandigarh, Punjab",Puducherry,100.0,80,80,-50,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+302,S-M_B-D_A-U_E-D_R-U,manual,"Pune, Maharashtra","Rann of Kutch, Gujarat",1830.0,80,60,132,Tata Curvv EV (307 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+303,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Noida, Uttar Pradesh",8.0,40,59,129,Mahindra BE 6 (392 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+304,S-M_B-D_A-U_E-U_R-U,manual,"Coimbatore, Tamil Nadu","Chennai, Tamil Nadu",310.7,80,73,291,GWM Ora Ora 03 (257 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+305,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Ranchi, Jharkhand",11.1,70,80,257,XPeng G6 (433 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+306,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",19.0,80,90,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+307,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",32.0,2,80,111,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+308,S-M_B-D_A-U_E-U_R-D,manual,"Dehradun, Uttarakhand","Manali, Himachal Pradesh",16.0,80,55,381,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+309,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Rajkot, Gujarat",301.5,80,60,212,Kia EV9 (387 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+310,S-M_B-U_A-U_E-U_R-D,manual,"Amritsar, Punjab",Pondicherry Rural Outpost,25.3,90,56,311,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+311,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Jodhpur, Rajasthan",231.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+312,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),Puducherry,1752.0,100,71,255,Tesla Model Y (346 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+313,S-M_B-U_A-U_E-D_R-U,manual,"Visakhapatnam, Andhra Pradesh","Leh, Ladakh",53.0,1,73,108,Tata Tiago EV (160 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+314,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Raipur, Chhattisgarh",1218.5,30,77,343,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+315,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Kanpur, Uttar Pradesh",146.0,1,97,248,Nissan Leaf (228 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+316,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Noida, Uttar Pradesh",65.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+317,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Surat, Gujarat",106.0,10,80,129,Mahindra BE 6 (392 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+318,S-M_B-D_A-D_E-D_R-U,manual,"Vadodara, Gujarat","Gangtok, Sikkim",46.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+319,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),Puducherry,49.7,80,68,216,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+320,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Gangtok, Sikkim",148.9,60,80,206,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+321,S-M_B-D_A-U_E-D_R-D,manual,"Srinagar, Jammu & Kashmir","Jaipur, Rajasthan",325.0,80,96,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+322,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Manali, Himachal Pradesh",277.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+323,S-M_B-D_A-D_E-U_R-D,manual,"Srinagar, Jammu & Kashmir","Rajkot, Gujarat",361.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+324,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",575.1,80,80,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+325,S-M_B-U_A-D_E-U_R-U,manual,"Rann of Kutch, Gujarat","Nagpur, Maharashtra",6.0,20,80,182,BMW iX3 (347 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+326,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",19.0,80,80,233,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+327,S-M_B-U_A-U_E-U_R-U,manual,"Ranchi, Jharkhand",Pondicherry Rural Outpost,1278.0,60,82,100,MG MG4 (312 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+328,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Vadodara, Gujarat",1915.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+329,S-M_B-D_A-D_E-U_R-U,manual,"Ahmedabad, Gujarat","Noida, Uttar Pradesh",837.1,80,80,351,Tesla Model Y (346 km),MULTI_STOP,Route succeeds with 3 charging stops.
+330,S-M_B-U_A-D_E-D_R-D,manual,"Jamshedpur, Jharkhand","Chennai, Tamil Nadu",243.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+331,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",29.0,10,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+332,S-M_B-U_A-D_E-U_R-D,manual,"Visakhapatnam, Andhra Pradesh","Patna, Bihar",195.0,5,80,286,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+333,S-M_B-U_A-U_E-D_R-U,manual,"Gurugram, Haryana","Gangtok, Sikkim",13.0,20,67,157,Dongfeng Nammi 01 (229 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+334,S-M_B-D_A-D_E-D_R-D,manual,Puducherry,"Guwahati, Assam",1663.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+335,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Patna, Bihar",330.0,8,99,373,Mahindra BE 6 (451 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+336,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),Puducherry,5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+337,S-M_B-D_A-U_E-U_R-U,manual,Pondicherry Rural Outpost,"Manali, Himachal Pradesh",888.9,80,53,322,IM Motors IM6 (429 km),MULTI_STOP,Route succeeds with 4 charging stops.
+338,S-M_B-D_A-U_E-D_R-D,manual,"Kolkata, West Bengal","Bhubaneswar, Odisha",18.0,80,67,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+339,S-M_B-D_A-D_E-D_R-U,manual,"Kochi, Kerala","Visakhapatnam, Andhra Pradesh",972.7,80,80,173,Mercedes-Benz EQB (346 km),MULTI_STOP,Route succeeds with 4 charging stops.
+340,S-M_B-U_A-D_E-D_R-U,manual,"Dehradun, Uttarakhand","Madurai, Tamil Nadu",111.9,50,80,108,Tata Tiago EV (160 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+341,S-M_B-D_A-D_E-U_R-D,manual,"Guwahati, Assam","Thiruvananthapuram, Kerala",1658.0,80,80,322,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+342,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Bengaluru, Karnataka",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""abc"") rejected; default 80% retained, route proceeds at 80%."
+343,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),Puducherry,66.2,80,80,161,BMW i3 (212 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+344,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),Pondicherry Rural Outpost,13.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+345,S-M_B-U_A-U_E-D_R-D,manual,Puducherry,"Chennai, Tamil Nadu",356.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+346,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Pune, Maharashtra",1828.0,100,93,125,Mahindra BE 6 (392 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+347,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Surat, Gujarat",658.3,70,80,162,BYD Atto 2 (256 km),MULTI_STOP,Route succeeds with 4 charging stops.
+348,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Dehradun, Uttarakhand",12.0,40,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+349,S-M_B-D_A-D_E-U_R-U,manual,"Surat, Gujarat","Bhopal, Madhya Pradesh",688.7,80,80,100,Nissan Leaf (336 km),MULTI_STOP,Route succeeds with 3 charging stops.
+350,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Dehradun, Uttarakhand",68.2,60,63,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+351,S-M_B-D_A-D_E-U_R-D,manual,"Mumbai, Maharashtra","Ahmedabad, Gujarat",112.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+352,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",1883.4,80,80,150,Mahindra BE 6 (451 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+353,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Surat, Gujarat",10.0,80,87,160,Leapmotor C10 (377 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+354,S-M_B-D_A-D_E-D_R-D,manual,"Noida, Uttar Pradesh","Srinagar, Jammu & Kashmir",322.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+355,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Dehradun, Uttarakhand",20.8,80,80,247,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+356,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",1822.0,80,68,173,Mercedes-Benz EQE / EQE SUV (499 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+357,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",15.0,90,87,210,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+358,S-M_B-D_A-U_E-D_R-U,manual,"Rajkot, Gujarat","Gurugram, Haryana",36.3,80,65,173,Mercedes-Benz EQB (346 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+359,S-M_B-U_A-D_E-U_R-U,manual,"Jamshedpur, Jharkhand","Noida, Uttar Pradesh",173.0,50,80,136,BYD Atto 1 (197 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+360,S-M_B-U_A-U_E-D_R-U,manual,"Gangtok, Sikkim","Delhi, NCT",1262.0,100,77,178,Omoda E5 (278 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+361,S-M_B-D_A-D_E-D_R-D,manual,"Nashik, Maharashtra","Srinagar, Jammu & Kashmir",304.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+362,S-M_B-U_A-D_E-D_R-D,manual,"Kanpur, Uttar Pradesh","Pune, Maharashtra",5.5,50,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+363,S-M_B-U_A-U_E-D_R-U,manual,"Manali, Himachal Pradesh","Siliguri, West Bengal",356.0,5,61,181,IM Motors IM5 (353 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+364,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",1266.0,80,100,369,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+365,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Chennai, Tamil Nadu",1345.0,100,80,173,Mercedes-Benz EQE / EQE SUV (499 km),EDGE_LONG_TRIP,Route succeeds with 3 charging stops.
+366,S-M_B-D_A-D_E-D_R-D,manual,"Siliguri, West Bengal","Chennai, Tamil Nadu",260.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+367,S-M_B-D_A-D_E-D_R-D,manual,"Hyderabad, Telangana","Leh, Ladakh",329.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+368,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Goa (Panaji), Goa",1677.0,80,89,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+369,S-M_B-D_A-D_E-D_R-D,manual,"Gangtok, Sikkim","Thiruvananthapuram, Kerala",16.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+370,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Dehradun, Uttarakhand",17.0,80,60,306,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+371,S-M_B-D_A-D_E-D_R-D,manual,"Guwahati, Assam","Bhopal, Madhya Pradesh",1676.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+372,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Hyderabad, Telangana",96.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+373,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Manali, Himachal Pradesh",198.0,100,50,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+374,S-M_B-U_A-U_E-U_R-D,manual,"Leh, Ladakh","Kochi, Kerala",233.6,30,58,197,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+375,S-M_B-U_A-U_E-U_R-U,manual,"Agra, Uttar Pradesh","Amritsar, Punjab",1494.0,60,99,114,Omoda E5 (278 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+376,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Jaipur, Rajasthan",370.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+377,S-M_B-U_A-D_E-U_R-D,manual,"Goa (Panaji), Goa","Nashik, Maharashtra",9.0,60,80,309,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+378,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",14.0,80,80,335,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+379,S-M_B-D_A-D_E-U_R-D,manual,"Pune, Maharashtra","Nagpur, Maharashtra",100.0,80,80,0,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+380,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""abc"") rejected; default 80% retained, route proceeds at 80%."
+381,S-M_B-U_A-D_E-D_R-U,manual,"Goa (Panaji), Goa","Raipur, Chhattisgarh",43.5,70,80,181,IM Motors IM5 (353 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+382,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Leh, Ladakh",9.0,80,55,193,IM Motors IM6 (429 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+383,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",1396.0,100,73,185,Toyota bZ4X (311 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+384,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Gurugram, Haryana",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+385,S-M_B-D_A-D_E-U_R-D,manual,"Amritsar, Punjab","Jaipur, Rajasthan",629.3,80,80,187,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+386,S-M_B-U_A-U_E-D_R-D,manual,"Jodhpur, Rajasthan","Guwahati, Assam",49.0,50,52,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+387,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Gurugram, Haryana",1597.0,80,80,140,Dongfeng Vigo EV (321 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+388,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Raipur, Chhattisgarh",170.4,80,80,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+389,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),,99.8,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Choose a destination from the suggestions list.
+390,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Bengaluru, Karnataka",19.0,80,78,181,IM Motors IM5 (353 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+391,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Bengaluru, Karnataka",165.4,80,93,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+392,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",525.6,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+393,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Kochi, Kerala",1616.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+394,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""20"") rejected; default 80% retained."
+395,S-M_B-U_A-U_E-D_R-D,manual,"Shillong, Meghalaya","Hyderabad, Telangana",130.0,5,51,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+396,S-M_B-U_A-D_E-D_R-D,manual,"Indore, Madhya Pradesh","Siliguri, West Bengal",302.0,2,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+397,S-M_B-D_A-D_E-U_R-U,manual,"Chennai, Tamil Nadu","Guwahati, Assam",372.1,80,80,110,Mahindra BE 6 (451 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+398,S-M_B-D_A-D_E-D_R-D,manual,"Srinagar, Jammu & Kashmir","Kolkata, West Bengal",541.6,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+399,S-M_B-U_A-U_E-D_R-D,manual,"Guwahati, Assam","Patna, Bihar",16.0,20,60,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+400,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Delhi, NCT",1096.9,80,80,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+401,S-M_B-D_A-U_E-U_R-D,manual,"Hyderabad, Telangana","Rajkot, Gujarat",28.1,80,71,232,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+402,S-M_B-D_A-U_E-U_R-D,manual,"Hyderabad, Telangana","Shillong, Meghalaya",1347.0,80,59,138,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+403,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Vadodara, Gujarat",395.0,1,80,379,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+404,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Jaipur, Rajasthan",292.6,80,81,156,BMW i4 (369 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+405,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",371.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+406,S-M_B-U_A-D_E-D_R-U,manual,Puducherry,"Mumbai, Maharashtra",668.3,70,80,192,Mercedes-Benz EQA (312 km),MULTI_STOP,Route succeeds with 3 charging stops.
+407,S-M_B-U_A-D_E-U_R-U,manual,"Jaipur, Rajasthan","Hyderabad, Telangana",308.0,1,80,132,GAC Aion Aion V (459 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+408,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",87.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+409,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Raipur, Chhattisgarh",10.0,80,80,192,BYD Seal (387 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+410,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Kargil, Ladakh",110.3,100,80,137,BYD Atto 1 (197 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+411,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Goa (Panaji), Goa",340.0,90,80,160,Leapmotor C10 (377 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+412,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",198.0,80,53,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+413,S-M_B-D_A-D_E-U_R-D,manual,"Jodhpur, Rajasthan","Gurugram, Haryana",153.4,80,80,142,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+414,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",44.1,80,58,221,Kia EV9 (387 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+415,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",337.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+416,S-M_B-U_A-D_E-U_R-D,manual,"Ranchi, Jharkhand","Siliguri, West Bengal",48.0,8,80,318,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+417,S-M_B-U_A-D_E-U_R-U,manual,"Vadodara, Gujarat","Patna, Bihar",320.2,60,80,146,BYD Seal (387 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+418,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Kolkata, West Bengal",248.1,80,80,192,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+419,S-M_B-U_A-U_E-U_R-D,manual,Puducherry,"Kolkata, West Bengal",183.7,90,65,283,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+420,S-M_B-U_A-D_E-D_R-U,manual,"Rann of Kutch, Gujarat","Lucknow, Uttar Pradesh",216.7,90,80,137,BYD Atto 1 (197 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+421,S-M_B-U_A-D_E-D_R-D,manual,"Lucknow, Uttar Pradesh","Coimbatore, Tamil Nadu",240.0,10,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+422,S-M_B-U_A-D_E-D_R-D,manual,"Manali, Himachal Pradesh","Bhubaneswar, Odisha",306.1,90,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+423,S-M_B-U_A-D_E-U_R-D,manual,"Bhubaneswar, Odisha","Jodhpur, Rajasthan",19.0,60,80,275,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+424,S-M_B-D_A-D_E-U_R-U,manual,"Kargil, Ladakh","Coimbatore, Tamil Nadu",288.2,80,80,315,Audi Q8 e-tron (383 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+425,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",30.8,80,62,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+426,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Bengaluru, Karnataka",178.3,70,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+427,S-M_B-U_A-D_E-U_R-D,manual,"Nagpur, Maharashtra","Rann of Kutch, Gujarat",41.5,90,80,252,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+428,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Goa (Panaji), Goa",658.3,100,59,185,Toyota bZ4X (311 km),MULTI_STOP,Route succeeds with 3 charging stops.
+429,S-M_B-D_A-D_E-D_R-U,manual,"Kolkata, West Bengal","Ahmedabad, Gujarat",320.2,80,80,132,Tata Curvv EV (307 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+430,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Bhubaneswar, Odisha",220.0,80,54,185,Toyota bZ4X (311 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+431,S-M_B-D_A-U_E-D_R-D,manual,"Srinagar, Jammu & Kashmir","Nagpur, Maharashtra",1422.0,80,100,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+432,S-M_B-U_A-U_E-D_R-U,manual,"Kargil, Ladakh","Ranchi, Jharkhand",1758.0,60,56,180,Hyundai Ioniq 5 (387 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+433,S-M_B-U_A-D_E-U_R-U,manual,"Rann of Kutch, Gujarat","Shimla, Himachal Pradesh",452.3,50,80,340,Audi Q8 e-tron (383 km),MULTI_STOP,Route succeeds with 2 charging stops.
+434,S-M_B-U_A-U_E-D_R-D,manual,"Udaipur, Rajasthan","Mysuru, Karnataka",1779.0,100,53,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+435,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Jodhpur, Rajasthan",15.0,80,73,223,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+436,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Mysuru, Karnataka",362.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+437,S-M_B-U_A-D_E-D_R-D,manual,"Kolkata, West Bengal","Goa (Panaji), Goa",502.4,100,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+438,S-M_B-U_A-D_E-U_R-D,manual,"Bengaluru, Karnataka","Nashik, Maharashtra",86.0,1,80,124,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+439,S-M_B-D_A-U_E-U_R-U,manual,"Mysuru, Karnataka",Pondicherry Rural Outpost,320.2,80,74,309,Seres Seres 3 (260 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+440,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",15.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+441,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Jaipur, Rajasthan",1346.0,100,80,193,Tesla Model Y (346 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+442,S-M_B-U_A-D_E-U_R-D,manual,"Indore, Madhya Pradesh","Pune, Maharashtra",85.0,1,80,265,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+443,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Bhubaneswar, Odisha",17.0,80,57,258,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+444,S-M_B-U_A-D_E-D_R-U,manual,"Bhubaneswar, Odisha","Agra, Uttar Pradesh",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+445,S-M_B-U_A-D_E-D_R-U,manual,"Udaipur, Rajasthan","Lucknow, Uttar Pradesh",140.2,100,80,209,Audi Q8 e-tron (383 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+446,S-M_B-U_A-D_E-D_R-U,manual,"Shillong, Meghalaya","Surat, Gujarat",230.1,70,80,147,MG MG4 (312 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+447,S-M_B-U_A-U_E-U_R-D,manual,"Surat, Gujarat","Kargil, Ladakh",214.0,10,100,374,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+448,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Bengaluru, Karnataka",619.9,80,52,203,Nissan Ariya (340 km),MULTI_STOP,Route succeeds with 4 charging stops.
+449,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Gangtok, Sikkim",557.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+450,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Gangtok, Sikkim",184.0,2,50,162,BYD Atto 2 (256 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+451,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Delhi, NCT",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Arrival-Battery-Target keystroke (""90"") rejected; default 15% retained."
+452,S-M_B-D_A-D_E-U_R-D,manual,"Goa (Panaji), Goa","Hyderabad, Telangana",15.4,80,80,389,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+453,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Shillong, Meghalaya",234.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+454,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),Puducherry,237.1,80,67,387,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+455,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Amritsar, Punjab",6.7,50,80,179,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+456,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Ahmedabad, Gujarat",21.0,1,54,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+457,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",285.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+458,S-M_B-U_A-D_E-D_R-D,manual,"Kolkata, West Bengal","Guwahati, Assam",340.0,2,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+459,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Manali, Himachal Pradesh",100.0,80,80,0,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+460,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Noida, Uttar Pradesh",1993.5,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+461,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Guwahati, Assam",17.4,80,100,400,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+462,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Madurai, Tamil Nadu",487.5,80,80,287,Mercedes-Benz EQE / EQE SUV (499 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+463,S-M_B-U_A-U_E-D_R-U,manual,"Delhi, NCT","Coimbatore, Tamil Nadu",50.5,50,62,129,Mahindra BE 6 (392 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+464,S-M_B-D_A-D_E-U_R-D,manual,"Visakhapatnam, Andhra Pradesh","Thiruvananthapuram, Kerala",210.3,80,80,285,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+465,S-M_B-D_A-D_E-D_R-U,manual,"Noida, Uttar Pradesh","Madurai, Tamil Nadu",494.9,80,80,138,BYD Atto 3 (378 km),MULTI_STOP,Route succeeds with 2 charging stops.
+466,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Ranchi, Jharkhand",10.0,60,64,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+467,S-M_B-U_A-D_E-D_R-D,manual,"Bengaluru, Karnataka","Delhi, NCT",65.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+468,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Udaipur, Rajasthan",494.9,70,100,302,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+469,S-M_B-D_A-U_E-U_R-U,manual,"Ranchi, Jharkhand","Gangtok, Sikkim",1466.0,80,81,268,Dongfeng Box (176 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+470,S-M_B-D_A-U_E-U_R-D,manual,"Kargil, Ladakh","Srinagar, Jammu & Kashmir",648.5,80,72,162,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+471,S-M_B-D_A-D_E-D_R-U,manual,"Dehradun, Uttarakhand","Jodhpur, Rajasthan",11.0,80,80,192,BMW iX3 (347 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+472,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",17.0,60,75,221,Riddara RD6 (338 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+473,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Ahmedabad, Gujarat",48.0,1,80,139,IM Motors IM6 (429 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+474,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Nagpur, Maharashtra",638.9,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+475,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Raipur, Chhattisgarh",494.9,60,80,100,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+476,S-M_B-D_A-U_E-D_R-D,manual,"Rajkot, Gujarat","Gangtok, Sikkim",75.7,80,87,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+477,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",17.0,40,51,296,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+478,S-M_B-D_A-D_E-U_R-D,manual,"Visakhapatnam, Andhra Pradesh","Guwahati, Assam",213.5,80,80,370,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+479,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",1729.0,80,80,390,Toyota bZ4X (311 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+480,S-M_B-D_A-D_E-U_R-D,manual,"Kargil, Ladakh","Jodhpur, Rajasthan",104.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+481,S-M_B-U_A-D_E-D_R-U,manual,"Ranchi, Jharkhand","Goa (Panaji), Goa",204.1,60,80,172,Mercedes-Benz EQS / EQS SUV (617 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+482,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Nagpur, Maharashtra",1440.0,80,84,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+483,S-M_B-U_A-D_E-D_R-D,manual,"Rann of Kutch, Gujarat","Gangtok, Sikkim",119.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+484,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),Puducherry,1531.0,80,80,142,Nissan Leaf (228 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+485,S-M_B-U_A-D_E-D_R-U,manual,"Jaipur, Rajasthan","Guwahati, Assam",352.0,1,80,192,BMW iX3 (347 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+486,S-M_B-D_A-U_E-D_R-D,manual,"Goa (Panaji), Goa","Indore, Madhya Pradesh",5.0,80,65,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+487,S-M_B-D_A-U_E-U_R-D,manual,"Nagpur, Maharashtra","Patna, Bihar",175.6,80,68,370,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+488,S-M_B-D_A-U_E-D_R-D,manual,"Indore, Madhya Pradesh","Varanasi, Uttar Pradesh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""20"") rejected; default 80% retained."
+489,S-M_B-D_A-D_E-D_R-D,manual,"Ahmedabad, Gujarat","Varanasi, Uttar Pradesh",413.3,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+490,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Vadodara, Gujarat",96.3,60,75,161,BMW i3 (212 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+491,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Agra, Uttar Pradesh",1893.0,60,87,312,Tata Tiago EV (160 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+492,S-M_B-D_A-D_E-D_R-D,manual,"Thiruvananthapuram, Kerala","Ranchi, Jharkhand",362.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+493,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Surat, Gujarat",1926.0,80,90,297,Mahindra BE 6 (392 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+494,S-M_B-D_A-D_E-D_R-D,manual,"Noida, Uttar Pradesh","Rann of Kutch, Gujarat",619.9,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+495,S-M_B-U_A-U_E-U_R-U,manual,"Udaipur, Rajasthan","Pune, Maharashtra",210.3,70,84,263,Tata Curvv EV (307 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+496,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Rajkot, Gujarat",336.0,1,88,180,Hyundai Ioniq 5 (387 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+497,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",22.8,60,62,351,Mercedes-Benz EQB (346 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+498,S-M_B-U_A-D_E-D_R-D,manual,"Amritsar, Punjab","Kanpur, Uttar Pradesh",159.0,10,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+499,S-M_B-U_A-U_E-U_R-U,manual,"Mumbai, Maharashtra","Raipur, Chhattisgarh",69.2,70,98,215,Dongfeng Nammi 01 (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+500,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Ahmedabad, Gujarat",378.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+501,S-M_B-D_A-D_E-D_R-D,manual,"Jodhpur, Rajasthan","Chennai, Tamil Nadu",365.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 3 charging stops.
+502,S-M_B-D_A-D_E-U_R-D,manual,"Coimbatore, Tamil Nadu","Jodhpur, Rajasthan",100.0,80,80,0,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+503,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",271.4,70,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+504,S-M_B-U_A-D_E-D_R-D,manual,"Lucknow, Uttar Pradesh","Guwahati, Assam",194.0,5,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+505,S-M_B-U_A-U_E-D_R-U,manual,Puducherry,"Goa (Panaji), Goa",395.1,70,92,171,BMW iX3 (572 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+506,S-M_B-D_A-U_E-D_R-U,manual,Puducherry,"Chandigarh, Punjab",220.0,80,69,160,BYD M6 (281 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+507,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Amritsar, Punjab",8.0,20,53,221,Riddara RD6 (338 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+508,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Jaipur, Rajasthan",216.0,8,66,396,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+509,S-M_B-D_A-D_E-U_R-U,manual,"Rann of Kutch, Gujarat","Kolkata, West Bengal",78.1,80,80,306,Mercedes-Benz EQA (312 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+510,S-M_B-D_A-D_E-D_R-D,manual,"Udaipur, Rajasthan","Jodhpur, Rajasthan",10.3,80,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+511,S-M_B-D_A-U_E-D_R-U,manual,"Agra, Uttar Pradesh","Rajkot, Gujarat",1307.0,80,74,142,Nissan Leaf (228 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+512,S-M_B-U_A-D_E-D_R-D,manual,"Chennai, Tamil Nadu","Bhubaneswar, Odisha",139.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+513,S-M_B-U_A-U_E-D_R-U,manual,"Delhi, NCT","Chennai, Tamil Nadu",242.0,10,75,129,Mahindra BE 6 (392 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+514,S-M_B-U_A-U_E-U_R-U,manual,"Leh, Ladakh","Kolkata, West Bengal",226.7,60,54,280,Audi Q8 e-tron (383 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+515,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",1568.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+516,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Indore, Madhya Pradesh",40.3,80,86,140,Dongfeng Vigo EV (321 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+517,S-M_B-U_A-U_E-D_R-D,manual,"Hyderabad, Telangana","Lucknow, Uttar Pradesh",24.0,2,99,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+518,S-M_B-D_A-D_E-U_R-U,manual,"Vadodara, Gujarat","Chennai, Tamil Nadu",16.0,80,80,364,Riddara RD6 (338 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+519,S-M_B-D_A-U_E-D_R-D,manual,"Siliguri, West Bengal","Dehradun, Uttarakhand",742.4,80,75,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+520,S-M_B-D_A-U_E-D_R-U,manual,"Leh, Ladakh","Rann of Kutch, Gujarat",1506.0,80,67,132,Tata Curvv EV (307 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+521,S-M_B-U_A-D_E-D_R-U,manual,"Delhi, NCT","Madurai, Tamil Nadu",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+522,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",89.3,70,80,122,Tata Tiago EV (160 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+523,S-M_B-U_A-U_E-U_R-D,manual,"Thiruvananthapuram, Kerala","Raipur, Chhattisgarh",32.2,90,85,102,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+524,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Siliguri, West Bengal",223.3,90,80,193,IM Motors IM6 (429 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+525,S-M_B-U_A-D_E-D_R-U,manual,"Gurugram, Haryana","Coimbatore, Tamil Nadu",8.0,20,80,147,MG MG4 (312 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+526,S-M_B-D_A-D_E-U_R-U,manual,"Thiruvananthapuram, Kerala","Bhubaneswar, Odisha",16.0,80,80,145,IM Motors IM5 (353 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+527,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Madurai, Tamil Nadu",100.0,80,80,-50,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+528,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),Pondicherry Rural Outpost,288.2,80,51,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+529,S-M_B-U_A-D_E-D_R-D,manual,"Jodhpur, Rajasthan","Guwahati, Assam",14.7,40,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+530,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Jaipur, Rajasthan",24.9,50,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+531,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",413.3,90,92,267,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+532,S-M_B-D_A-D_E-D_R-D,manual,"Mumbai, Maharashtra","Noida, Uttar Pradesh",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+533,S-M_B-U_A-D_E-U_R-D,manual,"Nashik, Maharashtra","Thiruvananthapuram, Kerala",80.4,100,80,196,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+534,S-M_B-U_A-U_E-D_R-D,manual,"Udaipur, Rajasthan","Nagpur, Maharashtra",1859.0,60,70,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+535,S-M_B-U_A-D_E-U_R-D,manual,"Jaipur, Rajasthan","Bhubaneswar, Odisha",178.3,30,80,386,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+536,S-M_B-D_A-U_E-D_R-D,manual,"Hyderabad, Telangana","Gurugram, Haryana",155.7,80,53,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+537,S-M_B-D_A-D_E-U_R-D,manual,"Visakhapatnam, Andhra Pradesh","Dehradun, Uttarakhand",6.0,80,80,391,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+538,S-M_B-U_A-U_E-D_R-D,manual,"Bhubaneswar, Odisha","Gangtok, Sikkim",413.3,100,89,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+539,S-M_B-D_A-D_E-D_R-D,manual,"Agra, Uttar Pradesh","Delhi, NCT",648.5,80,80,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+540,S-M_B-D_A-D_E-D_R-U,manual,"Thiruvananthapuram, Kerala","Leh, Ladakh",21.8,80,80,140,Dongfeng Vigo EV (321 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+541,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Patna, Bihar",176.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+542,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Delhi, NCT",5.0,40,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+543,S-M_B-U_A-U_E-U_R-U,manual,"Shimla, Himachal Pradesh","Agra, Uttar Pradesh",972.7,90,87,343,Audi Q8 e-tron (383 km),MULTI_STOP,Route succeeds with 3 charging stops.
+544,S-M_B-D_A-U_E-D_R-U,manual,"Shimla, Himachal Pradesh","Patna, Bihar",389.2,80,68,173,Mahindra XEV 9e (391 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+545,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",243.0,2,80,398,Audi Q4 e-tron (355 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+546,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Manali, Himachal Pradesh",244.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+547,S-M_B-D_A-D_E-U_R-D,manual,"Varanasi, Uttar Pradesh","Nashik, Maharashtra",699.1,80,80,227,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+548,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Vadodara, Gujarat",1623.0,80,80,263,Nissan Leaf (336 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+549,S-M_B-D_A-U_E-U_R-U,manual,"Coimbatore, Tamil Nadu","Indore, Madhya Pradesh",1773.6,80,85,190,Audi Q4 e-tron (355 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+550,S-M_B-D_A-U_E-D_R-D,manual,"Jamshedpur, Jharkhand","Kolkata, West Bengal",17.0,80,78,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+551,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Mumbai, Maharashtra",363.0,5,80,164,Dongfeng Nammi 01 (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+552,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Ranchi, Jharkhand",753.6,60,62,355,Deepal S07 (368 km),MULTI_STOP,Route succeeds with 4 charging stops.
+553,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",295.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+554,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Chandigarh, Punjab",160.5,80,61,394,BYD Atto 2 (256 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+555,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Leh, Ladakh",1200.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+556,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",44.1,80,80,158,Tesla Model 3 (446 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+557,S-M_B-U_A-U_E-D_R-D,manual,"Coimbatore, Tamil Nadu","Rajkot, Gujarat",352.0,10,67,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+558,S-M_B-U_A-U_E-D_R-U,manual,"Patna, Bihar","Thiruvananthapuram, Kerala",387.0,8,91,209,Audi Q8 e-tron (383 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+559,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),Pondicherry Rural Outpost,1353.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+560,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Nashik, Maharashtra",134.0,50,72,324,Seres Seres 3 (260 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+561,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",5.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+562,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Bhubaneswar, Odisha",19.0,80,80,190,Deepal S07 (368 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+563,S-M_B-U_A-U_E-U_R-U,manual,"Nashik, Maharashtra","Shimla, Himachal Pradesh",1113.5,100,79,288,XPeng G6 (328 km),MULTI_STOP,Route succeeds with 4 charging stops.
+564,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Surat, Gujarat",113.0,10,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+565,S-M_B-U_A-U_E-D_R-U,manual,"Nagpur, Maharashtra","Nashik, Maharashtra",11.8,60,88,192,BMW iX3 (347 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+566,S-M_B-U_A-D_E-D_R-D,manual,"Ranchi, Jharkhand","Shimla, Himachal Pradesh",285.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+567,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Kochi, Kerala",1383.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+568,S-M_B-U_A-U_E-D_R-D,manual,"Guwahati, Assam","Varanasi, Uttar Pradesh",209.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+569,S-M_B-D_A-U_E-U_R-U,manual,"Jamshedpur, Jharkhand","Shillong, Meghalaya",5.2,80,66,187,Tesla Model 3 (446 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+570,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Kochi, Kerala",583.8,90,100,195,Kia EV5 (360 km),MULTI_STOP,Route succeeds with 2 charging stops.
+571,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Jaipur, Rajasthan",184.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+572,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Agra, Uttar Pradesh",9.0,40,80,182,XPeng G6 (328 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+573,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Dehradun, Uttarakhand",267.4,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+574,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Amritsar, Punjab",51.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+575,S-M_B-D_A-U_E-D_R-D,manual,"Rajkot, Gujarat","Shillong, Meghalaya",84.1,80,71,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+576,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Surat, Gujarat",776.6,90,98,220,BYD Atto 3 (378 km),MULTI_STOP,Route succeeds with 2 charging stops.
+577,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Pune, Maharashtra",35.8,100,80,175,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+578,S-M_B-U_A-D_E-D_R-U,manual,"Nagpur, Maharashtra","Dehradun, Uttarakhand",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+579,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",1866.0,60,97,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+580,S-M_B-D_A-D_E-D_R-D,manual,"Gangtok, Sikkim","Indore, Madhya Pradesh",11.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+581,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Bhubaneswar, Odisha",86.7,60,80,320,IM Motors IM6 (429 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+582,S-M_B-U_A-D_E-U_R-D,manual,"Pune, Maharashtra","Chandigarh, Punjab",1346.0,100,80,233,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+583,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Agra, Uttar Pradesh",776.6,60,97,221,Kia EV9 (387 km),MULTI_STOP,Route succeeds with 2 charging stops.
+584,S-M_B-U_A-D_E-D_R-D,manual,"Hyderabad, Telangana","Kochi, Kerala",83.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+585,S-M_B-D_A-U_E-U_R-D,manual,"Agra, Uttar Pradesh","Pune, Maharashtra",372.1,80,51,202,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+586,S-M_B-D_A-U_E-D_R-U,manual,"Raipur, Chhattisgarh","Leh, Ladakh",7.0,80,85,188,Deepal S05 (321 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+587,S-M_B-U_A-D_E-U_R-D,manual,"Visakhapatnam, Andhra Pradesh","Varanasi, Uttar Pradesh",22.1,60,80,247,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+588,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Leh, Ladakh",383.4,90,80,157,Kia EV9 (387 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+589,S-M_B-D_A-D_E-D_R-D,manual,"Siliguri, West Bengal","Gangtok, Sikkim",6.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+590,S-M_B-U_A-U_E-D_R-U,manual,"Coimbatore, Tamil Nadu","Mumbai, Maharashtra",162.0,1,51,181,IM Motors IM5 (353 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+591,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Kanpur, Uttar Pradesh",5.0,40,55,179,XPeng G6 (328 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+592,S-M_B-U_A-D_E-D_R-D,manual,Pondicherry Rural Outpost,"Jodhpur, Rajasthan",153.4,70,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+593,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Amritsar, Punjab",432.4,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+594,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Jodhpur, Rajasthan",372.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+595,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Goa (Panaji), Goa",10.0,60,57,343,Mercedes-Benz EQA (312 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+596,S-M_B-D_A-U_E-D_R-U,manual,"Goa (Panaji), Goa","Bhubaneswar, Odisha",8.0,80,85,172,Mercedes-Benz EQS / EQS SUV (617 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+597,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Bhubaneswar, Odisha",1877.0,80,95,101,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+598,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",395.1,50,80,348,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+599,S-M_B-U_A-U_E-U_R-U,manual,"Srinagar, Jammu & Kashmir","Gangtok, Sikkim",263.4,70,75,216,Seres Seres 3 (260 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+600,S-M_B-D_A-D_E-U_R-D,manual,"Agra, Uttar Pradesh","Mysuru, Karnataka",100.0,80,80,-50,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+601,S-M_B-U_A-U_E-U_R-D,manual,"Rann of Kutch, Gujarat","Udaipur, Rajasthan",18.0,20,92,149,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+602,S-M_B-U_A-U_E-U_R-U,manual,Pondicherry Rural Outpost,"Jaipur, Rajasthan",361.1,70,63,185,DENZA D9 (454 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+603,S-M_B-D_A-D_E-U_R-U,manual,"Bhubaneswar, Odisha","Visakhapatnam, Andhra Pradesh",10.0,80,80,289,XPeng G6 (328 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+604,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Siliguri, West Bengal",16.9,90,56,193,IM Motors IM6 (429 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+605,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Dehradun, Uttarakhand",17.0,40,100,157,Dongfeng Nammi 01 (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+606,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Guwahati, Assam",119.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+607,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",62.3,80,51,173,Mercedes-Benz EQE / EQE SUV (499 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+608,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Raipur, Chhattisgarh",549.8,80,80,333,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+609,S-M_B-D_A-D_E-D_R-U,manual,"Shillong, Meghalaya","Agra, Uttar Pradesh",1765.0,80,80,167,Nissan Ariya (340 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+610,S-M_B-D_A-U_E-D_R-D,manual,"Siliguri, West Bengal","Chennai, Tamil Nadu",9.3,80,57,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+611,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),Pondicherry Rural Outpost,987.5,80,72,276,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+612,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Patna, Bihar",90.7,50,85,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+613,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Agra, Uttar Pradesh",43.5,80,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+614,S-M_B-D_A-U_E-U_R-D,manual,"Chandigarh, Punjab","Delhi, NCT",1333.4,80,78,333,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+615,S-M_B-D_A-U_E-D_R-D,manual,"Visakhapatnam, Andhra Pradesh","Ranchi, Jharkhand",201.0,80,81,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+616,S-M_B-U_A-D_E-U_R-D,manual,"Udaipur, Rajasthan","Srinagar, Jammu & Kashmir",20.0,60,80,131,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+617,S-M_B-U_A-D_E-U_R-U,manual,"Siliguri, West Bengal","Kanpur, Uttar Pradesh",170.0,1,80,132,Kia EV9 (387 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+618,S-M_B-D_A-D_E-D_R-D,manual,"Pune, Maharashtra","Delhi, NCT",280.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+619,S-M_B-D_A-U_E-D_R-D,manual,"Chennai, Tamil Nadu",Puducherry,1213.0,80,98,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+620,S-M_B-U_A-U_E-D_R-U,manual,"Mysuru, Karnataka","Udaipur, Rajasthan",64.2,90,82,193,IM Motors IM6 (429 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+621,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Amritsar, Punjab",141.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+622,S-M_B-U_A-U_E-U_R-D,manual,"Chandigarh, Punjab","Agra, Uttar Pradesh",212.0,5,70,243,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+623,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Shillong, Meghalaya",220.0,5,73,154,GWM Ora Ora 03 (257 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+624,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Raipur, Chhattisgarh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""150"") rejected; default 80% retained."
+625,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Shillong, Meghalaya",100.0,80,80,xyz,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+626,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),Pondicherry Rural Outpost,419.6,90,51,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+627,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Ahmedabad, Gujarat",517.7,80,83,261,BYD Atto 3 (378 km),MULTI_STOP,Route succeeds with 2 charging stops.
+628,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Nagpur, Maharashtra",108.0,2,57,120,Audi Q8 e-tron (383 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+629,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Siliguri, West Bengal",1338.0,80,80,129,Mahindra BE 6 (392 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+630,S-M_B-U_A-U_E-U_R-D,manual,"Raipur, Chhattisgarh","Leh, Ladakh",306.1,90,55,218,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+631,S-M_B-U_A-D_E-D_R-U,manual,"Jamshedpur, Jharkhand",Puducherry,2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+632,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Shillong, Meghalaya",220.0,80,71,195,Audi Q4 e-tron (355 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+633,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Noida, Uttar Pradesh",231.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+634,S-M_B-U_A-D_E-D_R-U,manual,"Srinagar, Jammu & Kashmir","Hyderabad, Telangana",19.0,40,80,147,MG MG4 (312 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+635,S-M_B-U_A-D_E-D_R-D,manual,"Hyderabad, Telangana","Visakhapatnam, Andhra Pradesh",166.0,10,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+636,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",198.0,70,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+637,S-M_B-D_A-U_E-U_R-U,manual,"Visakhapatnam, Andhra Pradesh","Nashik, Maharashtra",13.0,80,98,333,XPeng G6 (433 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+638,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),Puducherry,205.0,2,66,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+639,S-M_B-D_A-U_E-D_R-D,manual,"Jamshedpur, Jharkhand","Varanasi, Uttar Pradesh",12.0,80,51,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+640,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Kargil, Ladakh",1775.0,80,80,182,XPeng G6 (433 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+641,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Chandigarh, Punjab",102.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+642,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Nashik, Maharashtra",14.0,40,86,207,Mercedes-Benz EQE / EQE SUV (499 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+643,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Gurugram, Haryana",399.0,10,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+644,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",65.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+645,S-M_B-D_A-D_E-D_R-U,manual,"Kochi, Kerala","Vadodara, Gujarat",20.0,80,80,155,BYD Atto 3 (351 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+646,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Surat, Gujarat",170.4,80,80,164,BMW i3 (212 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+647,S-M_B-U_A-U_E-D_R-D,manual,"Gurugram, Haryana","Siliguri, West Bengal",51.0,2,51,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+648,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Bhopal, Madhya Pradesh",95.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+649,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Chandigarh, Punjab",86.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+650,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Noida, Uttar Pradesh",684.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+651,S-M_B-D_A-D_E-U_R-D,manual,"Delhi, NCT","Nashik, Maharashtra",688.7,80,80,247,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+652,S-M_B-D_A-D_E-U_R-D,manual,"Dehradun, Uttarakhand","Pune, Maharashtra",100.0,80,80,xyz,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+653,S-M_B-U_A-D_E-D_R-U,manual,"Indore, Madhya Pradesh","Srinagar, Jammu & Kashmir",126.0,2,80,171,BMW iX3 (572 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+654,S-M_B-U_A-U_E-D_R-D,manual,"Vadodara, Gujarat","Kanpur, Uttar Pradesh",192.2,90,82,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+655,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Kolkata, West Bengal",432.4,80,87,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+656,S-M_B-D_A-U_E-U_R-D,manual,"Rajkot, Gujarat","Visakhapatnam, Andhra Pradesh",165.4,80,74,149,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+657,S-M_B-U_A-D_E-U_R-U,manual,"Delhi, NCT","Leh, Ladakh",7.5,70,80,118,Kia EV5 (360 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+658,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Rajkot, Gujarat",94.9,90,61,372,BYD Atto 3 (378 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+659,S-M_B-D_A-D_E-D_R-D,manual,"Varanasi, Uttar Pradesh","Kanpur, Uttar Pradesh",308.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+660,S-M_B-U_A-D_E-U_R-U,manual,"Udaipur, Rajasthan",Pondicherry Rural Outpost,19.0,60,80,232,BMW iX3 (572 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+661,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",902.4,50,80,221,Riddara RD6 (338 km),MULTI_STOP,Route succeeds with 4 charging stops.
+662,S-M_B-D_A-D_E-D_R-D,manual,"Kargil, Ladakh","Gurugram, Haryana",19.9,80,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+663,S-M_B-U_A-U_E-U_R-U,manual,"Ahmedabad, Gujarat","Indore, Madhya Pradesh",178.0,8,67,128,Mercedes-Benz EQE / EQE SUV (499 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+664,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Surat, Gujarat",191.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+665,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",58.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+666,S-M_B-U_A-D_E-U_R-U,manual,"Patna, Bihar","Mysuru, Karnataka",79.2,100,80,364,Deepal S07 (368 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+667,S-M_B-D_A-D_E-U_R-D,manual,"Noida, Uttar Pradesh","Delhi, NCT",100.0,80,80,-50,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+668,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",226.7,50,65,130,Mahindra XEV 9e (391 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+669,S-M_B-U_A-U_E-D_R-D,manual,"Rajkot, Gujarat","Manali, Himachal Pradesh",211.0,2,100,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+670,S-M_B-U_A-D_E-D_R-U,manual,"Lucknow, Uttar Pradesh","Delhi, NCT",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+671,S-M_B-D_A-U_E-U_R-D,manual,"Gurugram, Haryana","Siliguri, West Bengal",263.4,80,83,330,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+672,S-M_B-U_A-D_E-D_R-D,manual,"Shillong, Meghalaya","Varanasi, Uttar Pradesh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""abc"") rejected; default 80% retained, route proceeds at 80%."
+673,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",1511.0,80,80,303,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+674,S-M_B-D_A-D_E-D_R-U,manual,"Manali, Himachal Pradesh",Puducherry,812.3,80,80,129,Mahindra BE 6 (392 km),MULTI_STOP,Route succeeds with 3 charging stops.
+675,S-M_B-U_A-U_E-U_R-U,manual,"Gangtok, Sikkim","Kochi, Kerala",10.0,20,75,318,BMW iX3 (347 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+676,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",0.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Route succeeds with 0 charging stops (distance ~0 km) — not rejected by validation (ground-truth gap, not a bug per se)."
+677,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Kanpur, Uttar Pradesh",425.9,80,80,173,Mahindra XEV 9e (391 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+678,S-M_B-D_A-D_E-U_R-D,manual,"Shimla, Himachal Pradesh","Coimbatore, Tamil Nadu",15.0,80,80,153,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+679,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Hyderabad, Telangana",544.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+680,S-M_B-D_A-D_E-U_R-U,manual,"Noida, Uttar Pradesh","Pune, Maharashtra",1048.6,80,80,188,IM Motors IM5 (353 km),MULTI_STOP,Route succeeds with 4 charging stops.
+681,S-M_B-D_A-D_E-U_R-U,manual,"Shimla, Himachal Pradesh","Lucknow, Uttar Pradesh",753.6,80,80,130,Omoda E5 (278 km),MULTI_STOP,Route succeeds with 4 charging stops.
+682,S-M_B-D_A-D_E-D_R-U,manual,"Pune, Maharashtra","Varanasi, Uttar Pradesh",1592.0,80,80,142,Nissan Leaf (228 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+683,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Ranchi, Jharkhand",1626.0,80,95,138,BYD Atto 3 (378 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+684,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Leh, Ladakh",132.0,80,80,356,Mahindra XEV 9e (391 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+685,S-M_B-D_A-U_E-D_R-U,manual,Pondicherry Rural Outpost,"Pune, Maharashtra",1836.0,80,97,143,Tesla Model Y (346 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+686,S-M_B-U_A-D_E-U_R-U,manual,"Mysuru, Karnataka","Hyderabad, Telangana",220.0,1,80,337,GWM Ora Ora 03 (257 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+687,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Ahmedabad, Gujarat",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Arrival-Battery-Target keystroke (""90"") rejected; default 15% retained."
+688,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Vadodara, Gujarat",202.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+689,S-M_B-D_A-D_E-U_R-U,manual,"Thiruvananthapuram, Kerala","Jodhpur, Rajasthan",10.0,80,80,309,Riddara RD6 (338 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+690,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",120.6,80,54,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+691,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Siliguri, West Bengal",171.0,1,82,268,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+692,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Delhi, NCT",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+693,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Chandigarh, Punjab",678.4,80,80,129,Dongfeng Nammi 01 (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+694,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Leh, Ladakh",115.3,30,63,351,Dongfeng Nammi 01 (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+695,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Gurugram, Haryana",1295.0,100,90,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+696,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",5.2,60,80,242,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+697,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Ranchi, Jharkhand",7.0,60,66,173,Mahindra XEV 9e (391 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+698,S-M_B-U_A-D_E-U_R-D,manual,"Pune, Maharashtra","Dehradun, Uttarakhand",1534.0,100,80,290,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+699,S-M_B-D_A-U_E-D_R-U,manual,"Nashik, Maharashtra","Shimla, Himachal Pradesh",244.4,80,64,178,Omoda E5 (278 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+700,S-M_B-U_A-U_E-D_R-U,manual,"Ahmedabad, Gujarat","Rajkot, Gujarat",610.7,100,58,192,BMW iX3 (347 km),MULTI_STOP,Route succeeds with 3 charging stops.
+701,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Mysuru, Karnataka",268.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+702,S-M_B-D_A-U_E-D_R-D,manual,"Kanpur, Uttar Pradesh",Pondicherry Rural Outpost,100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""20"") rejected; default 80% retained."
+703,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",1584.0,80,64,242,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+704,S-M_B-U_A-D_E-U_R-U,manual,"Jaipur, Rajasthan","Ahmedabad, Gujarat",192.0,1,80,187,IM Motors IM6 (429 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+705,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",100.0,80,80,180,N/A (no vehicle),INVALID_INPUT,Rejected: Select your vehicle to continue.
+706,S-M_B-U_A-D_E-D_R-U,manual,"Noida, Uttar Pradesh","Shillong, Meghalaya",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+707,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Madurai, Tamil Nadu",233.6,60,67,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+708,S-M_B-U_A-U_E-U_R-U,manual,"Udaipur, Rajasthan","Goa (Panaji), Goa",103.0,2,92,384,BYD Atto 1 (197 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+709,S-M_B-D_A-D_E-U_R-D,manual,"Gangtok, Sikkim","Kochi, Kerala",237.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+710,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Jaipur, Rajasthan",109.0,1,80,264,Mahindra XEV 9e (391 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+711,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),Pondicherry Rural Outpost,395.1,80,64,303,Deepal S07 (368 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+712,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Kolkata, West Bengal",158.1,60,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+713,S-M_B-D_A-D_E-D_R-U,manual,"Jaipur, Rajasthan","Indore, Madhya Pradesh",69.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+714,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",160.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+715,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Manali, Himachal Pradesh",541.6,80,80,386,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+716,S-M_B-D_A-D_E-D_R-U,manual,"Shillong, Meghalaya","Amritsar, Punjab",292.6,80,80,182,Kia EV6 (383 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+717,S-M_B-D_A-D_E-D_R-U,manual,"Lucknow, Uttar Pradesh","Shimla, Himachal Pradesh",36.3,80,80,185,Toyota bZ4X (311 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+718,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Jodhpur, Rajasthan",240.7,60,82,185,Toyota bZ4X (311 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+719,S-M_B-U_A-D_E-D_R-D,manual,Puducherry,"Kochi, Kerala",204.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+720,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",35.0,5,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+721,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",18.0,60,98,186,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+722,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Noida, Uttar Pradesh",373.0,8,90,391,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+723,S-M_B-D_A-D_E-D_R-D,manual,"Srinagar, Jammu & Kashmir","Amritsar, Punjab",237.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+724,S-M_B-D_A-D_E-D_R-U,manual,"Chandigarh, Punjab","Bhubaneswar, Odisha",248.1,80,80,140,Dongfeng Vigo EV (321 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+725,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",383.4,80,52,207,Mahindra BE 6 (392 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+726,S-M_B-D_A-D_E-D_R-D,manual,"Kanpur, Uttar Pradesh","Srinagar, Jammu & Kashmir",401.1,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+727,S-M_B-D_A-U_E-D_R-D,manual,"Dehradun, Uttarakhand","Shillong, Meghalaya",1896.0,80,52,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+728,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",16.0,80,80,315,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+729,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",349.0,5,74,221,Kia EV9 (387 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+730,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Gangtok, Sikkim",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Arrival-Battery-Target keystroke (""90"") rejected; default 15% retained."
+731,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Delhi, NCT",26.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+732,S-M_B-D_A-D_E-D_R-U,manual,"Ahmedabad, Gujarat","Bhopal, Madhya Pradesh",19.0,80,80,137,BYD Atto 1 (197 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+733,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",84.1,60,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+734,S-M_B-D_A-D_E-U_R-D,manual,"Chandigarh, Punjab","Udaipur, Rajasthan",105.4,80,80,218,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+735,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Shimla, Himachal Pradesh",198.0,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+736,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Amritsar, Punjab",102.0,1,67,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+737,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Hyderabad, Telangana",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+738,S-M_B-U_A-U_E-D_R-U,manual,"Goa (Panaji), Goa","Surat, Gujarat",144.5,70,63,161,BMW i3 (212 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+739,S-M_B-D_A-D_E-D_R-U,manual,"Mysuru, Karnataka","Kochi, Kerala",17.0,80,80,154,GWM Ora Ora 03 (257 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+740,S-M_B-U_A-D_E-U_R-D,manual,"Manali, Himachal Pradesh","Nashik, Maharashtra",64.2,60,80,377,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+741,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Dehradun, Uttarakhand",16.0,80,81,195,Kia EV5 (360 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+742,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Nagpur, Maharashtra",100.0,80,80,xyz,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+743,S-M_B-D_A-D_E-U_R-U,manual,"Chennai, Tamil Nadu","Ranchi, Jharkhand",1738.0,80,80,168,GWM Ora Ora 03 (257 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+744,S-M_B-D_A-D_E-U_R-U,manual,"Rajkot, Gujarat","Pune, Maharashtra",72.4,80,80,232,Dongfeng Box (176 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+745,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",1222.0,80,80,138,BYD Atto 3 (378 km),EDGE_LONG_TRIP,Route succeeds with 4 charging stops.
+746,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",216.0,5,72,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+747,S-M_B-D_A-D_E-D_R-D,manual,"Rajkot, Gujarat","Rajkot, Gujarat",0.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Route succeeds with 0 charging stops (distance ~0 km) — not rejected by validation (ground-truth gap, not a bug per se)."
+748,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",115.3,60,100,246,Mahindra BE 6 (451 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+749,S-M_B-U_A-D_E-D_R-D,manual,"Surat, Gujarat","Pune, Maharashtra",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""-10"") rejected; default 80% retained, route proceeds at 80%."
+750,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",100.0,80,80,180,N/A (no vehicle),INVALID_INPUT,Rejected: Select your vehicle to continue.
+751,S-M_B-U_A-D_E-U_R-D,manual,"Shillong, Meghalaya","Hyderabad, Telangana",401.1,100,80,397,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+752,S-M_B-U_A-U_E-U_R-D,manual,"Kanpur, Uttar Pradesh","Thiruvananthapuram, Kerala",288.2,90,79,220,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+753,S-M_B-U_A-D_E-U_R-D,manual,"Thiruvananthapuram, Kerala","Kochi, Kerala",638.9,50,80,209,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+754,S-M_B-U_A-U_E-D_R-U,manual,Puducherry,"Patna, Bihar",363.0,10,84,132,Hyundai Ioniq Electric / Kona Electric (245 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+755,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Kargil, Ladakh",195.1,80,80,173,Seres Seres 3 (260 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+756,S-M_B-U_A-U_E-U_R-U,manual,"Shimla, Himachal Pradesh",Pondicherry Rural Outpost,5.0,60,53,140,GWM Ora Ora 03 (257 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+757,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",18.2,50,76,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+758,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Agra, Uttar Pradesh",161.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+759,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Mysuru, Karnataka",7.0,60,51,237,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+760,S-M_B-D_A-U_E-D_R-D,manual,"Rann of Kutch, Gujarat","Bengaluru, Karnataka",40.3,80,79,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+761,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Jaipur, Rajasthan",89.3,80,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+762,S-M_B-D_A-D_E-D_R-U,manual,"Raipur, Chhattisgarh","Indore, Madhya Pradesh",12.3,80,80,195,Kia EV5 (360 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+763,S-M_B-U_A-D_E-U_R-D,manual,"Guwahati, Assam","Gurugram, Haryana",360.0,1,80,233,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+764,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Mumbai, Maharashtra",93.0,1,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+765,S-M_B-U_A-D_E-U_R-U,manual,"Guwahati, Assam","Jaipur, Rajasthan",1673.0,100,80,394,Hyundai Ioniq Electric / Kona Electric (245 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+766,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Coimbatore, Tamil Nadu",253.0,8,80,368,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+767,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),Pondicherry Rural Outpost,108.6,80,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+768,S-M_B-D_A-D_E-D_R-U,manual,"Varanasi, Uttar Pradesh","Visakhapatnam, Andhra Pradesh",1218.5,80,80,180,Hyundai Ioniq 5 (387 km),MULTI_STOP,Route succeeds with 4 charging stops.
+769,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Surat, Gujarat",259.5,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+770,S-M_B-U_A-U_E-D_R-U,manual,"Noida, Uttar Pradesh","Srinagar, Jammu & Kashmir",502.4,60,52,138,BYD Atto 3 (378 km),MULTI_STOP,Route succeeds with 3 charging stops.
+771,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",1002.4,80,88,319,BYD Atto 3 (351 km),MULTI_STOP,Route succeeds with 4 charging stops.
+772,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Siliguri, West Bengal",162.9,80,71,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+773,S-M_B-U_A-D_E-D_R-U,manual,"Guwahati, Assam","Kochi, Kerala",1416.0,60,80,173,Mahindra XEV 9e (391 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+774,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",219.0,1,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+775,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Jodhpur, Rajasthan",146.7,80,94,124,Deepal Lumin (189 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+776,S-M_B-U_A-U_E-D_R-U,manual,"Coimbatore, Tamil Nadu","Dehradun, Uttarakhand",837.1,100,58,182,Kia EV6 (383 km),MULTI_STOP,Route succeeds with 4 charging stops.
+777,S-M_B-D_A-D_E-U_R-D,manual,"Thiruvananthapuram, Kerala","Udaipur, Rajasthan",295.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+778,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Leh, Ladakh",100.0,80,80,xyz,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+779,S-M_B-D_A-D_E-U_R-D,manual,"Kochi, Kerala","Kolkata, West Bengal",5.6,80,80,352,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+780,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Shillong, Meghalaya",96.3,100,72,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+781,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Ranchi, Jharkhand",100.0,80,80,-50,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+782,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Madurai, Tamil Nadu",213.5,80,71,185,Toyota bZ4X (311 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+783,S-M_B-D_A-U_E-U_R-U,manual,"Manali, Himachal Pradesh","Pune, Maharashtra",1274.0,80,71,110,BMW i4 (369 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+784,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Jodhpur, Rajasthan",272.0,1,96,383,Nissan Ariya (340 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+785,S-M_B-D_A-D_E-U_R-D,manual,"Delhi, NCT","Mysuru, Karnataka",14.0,80,80,312,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+786,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Nagpur, Maharashtra",0.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Route succeeds with 0 charging stops (distance ~0 km) — not rejected by validation (ground-truth gap, not a bug per se)."
+787,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",248.1,80,56,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+788,S-M_B-D_A-U_E-D_R-D,manual,"Patna, Bihar","Vadodara, Gujarat",407.2,80,55,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+789,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Patna, Bihar",251.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+790,S-M_B-D_A-D_E-U_R-D,manual,"Mumbai, Maharashtra","Leh, Ladakh",201.0,80,80,253,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+791,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Noida, Uttar Pradesh",227.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+792,S-M_B-D_A-U_E-U_R-D,manual,"Gurugram, Haryana","Thiruvananthapuram, Kerala",1595.0,80,70,179,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+793,S-M_B-D_A-U_E-U_R-D,manual,"Visakhapatnam, Andhra Pradesh","Jaipur, Rajasthan",361.1,80,70,265,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+794,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Hyderabad, Telangana",22.4,70,80,158,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+795,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Ranchi, Jharkhand",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+796,S-M_B-U_A-D_E-U_R-U,manual,Pondicherry Rural Outpost,"Patna, Bihar",8.6,70,80,328,Hyundai Ioniq Electric / Kona Electric (245 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+797,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Pune, Maharashtra",124.3,50,80,321,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+798,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Leh, Ladakh",1483.0,80,80,213,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+799,S-M_B-D_A-U_E-D_R-D,manual,"Siliguri, West Bengal","Patna, Bihar",389.2,80,54,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+800,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Shillong, Meghalaya",6.4,80,80,156,BMW iX3 (572 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+801,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Ranchi, Jharkhand",18.7,80,51,243,BMW iX3 (347 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+802,S-M_B-U_A-U_E-U_R-D,manual,"Mumbai, Maharashtra","Raipur, Chhattisgarh",1979.0,100,76,264,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+803,S-M_B-D_A-U_E-D_R-D,manual,"Hyderabad, Telangana","Shillong, Meghalaya",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""150"") rejected; default 80% retained."
+804,S-M_B-U_A-D_E-D_R-U,manual,"Nagpur, Maharashtra","Rann of Kutch, Gujarat",1940.0,100,80,143,Tesla Model Y (346 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+805,S-M_B-U_A-U_E-U_R-D,manual,"Kolkata, West Bengal","Visakhapatnam, Andhra Pradesh",173.0,5,77,316,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+806,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",8.3,70,98,120,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+807,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Noida, Uttar Pradesh",1218.5,80,52,364,Audi Q8 e-tron (383 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+808,S-M_B-D_A-D_E-U_R-D,manual,"Ahmedabad, Gujarat","Surat, Gujarat",197.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+809,S-M_B-D_A-D_E-D_R-D,manual,"Shimla, Himachal Pradesh","Kochi, Kerala",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+810,S-M_B-U_A-D_E-D_R-D,manual,"Rajkot, Gujarat","Dehradun, Uttarakhand",699.1,60,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+811,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Vadodara, Gujarat",17.0,20,85,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+812,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Bhubaneswar, Odisha",341.0,1,80,221,Kia EV9 (387 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+813,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Agra, Uttar Pradesh",1250.0,100,55,248,IM Motors IM5 (353 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+814,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Surat, Gujarat",275.5,80,73,108,Tata Tiago EV (160 km),MULTI_STOP,Route succeeds with 2 charging stops.
+815,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Nashik, Maharashtra",6.0,40,80,296,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+816,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Gangtok, Sikkim",207.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+817,S-A_B-U_A-U_E-D_R-U,automatic,Current Location (GPS),"Amritsar, Punjab",195.0,8,87,138,BYD Atto 3 (378 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+818,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Mysuru, Karnataka",24.9,70,69,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+819,S-M_B-D_A-U_E-U_R-U,manual,"Raipur, Chhattisgarh","Siliguri, West Bengal",230.1,80,77,381,IM Motors IM5 (353 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+820,S-M_B-D_A-D_E-U_R-U,manual,"Pune, Maharashtra","Gangtok, Sikkim",10.3,80,80,367,BMW i3 (212 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+821,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Ranchi, Jharkhand",73.5,30,80,272,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+822,S-M_B-U_A-D_E-D_R-D,manual,"Jodhpur, Rajasthan","Surat, Gujarat",228.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+823,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",175.6,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+824,S-M_B-U_A-U_E-D_R-D,manual,"Bhubaneswar, Odisha","Indore, Madhya Pradesh",285.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+825,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),Puducherry,485.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+826,S-M_B-D_A-D_E-D_R-U,manual,"Dehradun, Uttarakhand","Goa (Panaji), Goa",1695.5,80,80,162,BYD Atto 2 (256 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+827,S-M_B-U_A-D_E-D_R-D,manual,"Noida, Uttar Pradesh","Srinagar, Jammu & Kashmir",252.0,1,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+828,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Shimla, Himachal Pradesh",285.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+829,S-M_B-D_A-U_E-U_R-D,manual,"Kanpur, Uttar Pradesh",Pondicherry Rural Outpost,17.0,80,60,174,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+830,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Patna, Bihar",193.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+831,S-M_B-D_A-D_E-U_R-D,manual,"Noida, Uttar Pradesh","Hyderabad, Telangana",247.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+832,S-M_B-U_A-D_E-D_R-D,manual,"Nagpur, Maharashtra","Shimla, Himachal Pradesh",208.0,0,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Rejected: Current battery must be above 0%.
+833,S-M_B-U_A-U_E-U_R-U,manual,"Mumbai, Maharashtra","Madurai, Tamil Nadu",1248.0,60,65,297,GAC Aion Aion V (459 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+834,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",25.7,50,84,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+835,S-M_B-D_A-U_E-D_R-D,manual,"Raipur, Chhattisgarh","Kolkata, West Bengal",688.7,80,90,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+836,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Mysuru, Karnataka",14.1,80,80,236,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+837,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",23.0,10,80,274,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+838,S-M_B-D_A-U_E-D_R-U,manual,"Gurugram, Haryana","Jodhpur, Rajasthan",251.8,80,56,205,DENZA D9 (454 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+839,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Udaipur, Rajasthan",237.1,80,67,224,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+840,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Delhi, NCT",340.0,50,80,326,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+841,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Indore, Madhya Pradesh",324.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+842,S-M_B-D_A-U_E-U_R-U,manual,"Ahmedabad, Gujarat","Hyderabad, Telangana",517.7,80,54,258,BMW iX3 (572 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+843,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",287.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+844,S-M_B-D_A-D_E-D_R-D,manual,"Lucknow, Uttar Pradesh","Kargil, Ladakh",1274.6,80,80,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+845,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Raipur, Chhattisgarh",824.6,70,60,111,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+846,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Delhi, NCT",153.4,80,80,280,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+847,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",487.5,80,51,171,BMW iX3 (572 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+848,S-M_B-U_A-U_E-D_R-U,manual,"Jamshedpur, Jharkhand","Kolkata, West Bengal",1440.0,100,90,154,GWM Ora Ora 03 (257 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+849,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),,100.4,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Choose a destination from the suggestions list.
+850,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Gurugram, Haryana",233.6,60,80,356,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+851,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Mumbai, Maharashtra",1674.0,80,80,167,Nissan Ariya (340 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+852,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Bhopal, Madhya Pradesh",502.4,80,83,194,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+853,S-M_B-D_A-D_E-D_R-D,manual,"Madurai, Tamil Nadu","Mumbai, Maharashtra",192.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+854,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Madurai, Tamil Nadu",297.0,80,80,146,BYD Seal (378 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+855,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",183.7,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+856,S-M_B-D_A-D_E-D_R-U,manual,"Bengaluru, Karnataka","Udaipur, Rajasthan",119.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+857,S-M_B-D_A-D_E-D_R-D,manual,"Agra, Uttar Pradesh","Nashik, Maharashtra",52.0,80,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+858,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Ranchi, Jharkhand",100.0,80,80,180,N/A (no vehicle),INVALID_INPUT,Rejected: Select your vehicle to continue.
+859,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Indore, Madhya Pradesh",150.0,10,84,297,IM Motors IM6 (429 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+860,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Udaipur, Rajasthan",73.5,100,83,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+861,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Delhi, NCT",325.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+862,S-M_B-D_A-D_E-U_R-U,manual,"Bengaluru, Karnataka","Siliguri, West Bengal",15.0,80,80,304,Mahindra BE 6 (451 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+863,S-M_B-D_A-D_E-U_R-D,manual,"Shimla, Himachal Pradesh","Noida, Uttar Pradesh",340.0,80,80,114,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+864,S-M_B-D_A-D_E-U_R-D,manual,"Ahmedabad, Gujarat","Bengaluru, Karnataka",71.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+865,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Guwahati, Assam",619.9,60,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+866,S-M_B-D_A-U_E-D_R-U,manual,"Visakhapatnam, Andhra Pradesh","Kochi, Kerala",283.9,80,59,188,Deepal S05 (321 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+867,S-M_B-D_A-U_E-U_R-D,manual,"Rajkot, Gujarat",Pondicherry Rural Outpost,14.1,80,74,304,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+868,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Jaipur, Rajasthan",494.9,80,50,173,Mahindra XEV 9e (391 km),MULTI_STOP,Route succeeds with 2 charging stops.
+869,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Delhi, NCT",824.6,50,100,382,Omoda E5 (278 km),MULTI_STOP,Route succeeds with 4 charging stops.
+870,S-M_B-U_A-U_E-D_R-D,manual,"Indore, Madhya Pradesh","Jaipur, Rajasthan",284.0,1,58,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+871,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Chandigarh, Punjab",19.0,20,80,351,BMW i4 (369 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+872,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",224.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+873,S-M_B-D_A-D_E-D_R-D,manual,Puducherry,"Mysuru, Karnataka",1410.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+874,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Gangtok, Sikkim",361.1,80,59,360,Audi Q8 e-tron (383 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+875,S-M_B-D_A-U_E-D_R-U,manual,"Mumbai, Maharashtra","Leh, Ladakh",1266.0,80,64,153,Dongfeng Box (176 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+876,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Bengaluru, Karnataka",102.0,1,100,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+877,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Kochi, Kerala",92.1,80,73,263,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+878,S-M_B-D_A-D_E-D_R-D,manual,"Kargil, Ladakh","Thiruvananthapuram, Kerala",6.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+879,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",100.0,80,80,0,Dongfeng Box (229 km),INVALID_INPUT,Rejected: Enter a valid efficiency (Wh/km) above 0.
+880,S-M_B-D_A-U_E-U_R-U,manual,"Lucknow, Uttar Pradesh","Chennai, Tamil Nadu",189.3,80,78,241,Kia EV5 (360 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+881,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Rajkot, Gujarat",688.7,80,98,233,Mahindra XEV 9e (391 km),MULTI_STOP,Route succeeds with 2 charging stops.
+882,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",9.7,80,87,106,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+883,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),Pondicherry Rural Outpost,299.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+884,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Udaipur, Rajasthan",240.7,80,80,137,BYD Atto 1 (197 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+885,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",401.1,100,80,221,Riddara RD6 (338 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+886,S-M_B-U_A-D_E-D_R-U,manual,"Visakhapatnam, Andhra Pradesh","Kochi, Kerala",267.4,60,80,147,MG MG4 (312 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+887,S-M_B-U_A-U_E-D_R-U,manual,"Madurai, Tamil Nadu","Jodhpur, Rajasthan",765.0,90,53,116,Tesla Model 3 (446 km),MULTI_STOP,Route succeeds with 3 charging stops.
+888,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Shimla, Himachal Pradesh",1621.0,80,80,192,BYD Seal (387 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+889,S-M_B-D_A-D_E-D_R-U,manual,"Indore, Madhya Pradesh","Ahmedabad, Gujarat",279.7,80,80,143,Tesla Model Y (346 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+890,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Guwahati, Assam",216.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+891,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Udaipur, Rajasthan",19.0,60,92,346,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+892,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Surat, Gujarat",390.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+893,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Mysuru, Karnataka",100.0,80,80,180,N/A (no vehicle),INVALID_INPUT,Rejected: Select your vehicle to continue.
+894,S-A_B-U_A-U_E-D_R-D,automatic,Current Location (GPS),"Bhubaneswar, Odisha",401.1,50,90,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+895,S-M_B-D_A-U_E-D_R-U,manual,"Delhi, NCT","Gurugram, Haryana",20.0,80,85,178,Omoda E5 (278 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+896,S-M_B-U_A-D_E-U_R-D,manual,"Kargil, Ladakh","Mysuru, Karnataka",88.0,10,80,202,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+897,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Visakhapatnam, Andhra Pradesh",210.3,80,80,188,GWM Ora Ora 03 (257 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+898,S-M_B-D_A-D_E-D_R-D,manual,"Lucknow, Uttar Pradesh","Thiruvananthapuram, Kerala",153.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+899,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Rajkot, Gujarat",1997.0,80,82,110,Nissan Leaf (336 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+900,S-M_B-U_A-D_E-U_R-U,manual,"Lucknow, Uttar Pradesh","Thiruvananthapuram, Kerala",68.2,50,80,230,Tata Tiago EV (160 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+901,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Madurai, Tamil Nadu",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""150"") rejected; default 80% retained, route proceeds at 80%."
+902,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Amritsar, Punjab",29.4,50,79,226,Seres Seres 3 (260 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+903,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Jodhpur, Rajasthan",558.1,80,78,199,Deepal Lumin (189 km),MULTI_STOP,Route succeeds with 4 charging stops.
+904,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Agra, Uttar Pradesh",34.0,2,80,353,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+905,S-M_B-D_A-D_E-D_R-D,manual,"Delhi, NCT","Delhi, NCT",0.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Route succeeds with 0 charging stops (distance ~0 km) — not rejected by validation (ground-truth gap, not a bug per se)."
+906,S-M_B-U_A-D_E-U_R-U,manual,"Rann of Kutch, Gujarat","Manali, Himachal Pradesh",213.5,60,80,335,Tesla Model Y (346 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+907,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Mysuru, Karnataka",1907.0,80,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+908,S-M_B-D_A-D_E-D_R-D,manual,"Shimla, Himachal Pradesh","Vadodara, Gujarat",191.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+909,S-M_B-D_A-U_E-U_R-U,manual,"Shimla, Himachal Pradesh","Srinagar, Jammu & Kashmir",85.4,80,81,300,Deepal S07 (368 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+910,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Udaipur, Rajasthan",1305.0,60,80,340,Leapmotor C10 (377 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+911,S-M_B-D_A-U_E-U_R-U,manual,"Coimbatore, Tamil Nadu","Bengaluru, Karnataka",18.0,80,59,172,Mercedes-Benz EQB (346 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+912,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),Puducherry,1843.0,80,80,193,IM Motors IM6 (429 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+913,S-M_B-D_A-U_E-D_R-D,manual,"Srinagar, Jammu & Kashmir","Rajkot, Gujarat",517.7,80,81,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+914,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""abc"") rejected; default 80% retained, route proceeds at 80%."
+915,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Bhopal, Madhya Pradesh",1811.0,80,80,349,BYD Atto 1 (197 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+916,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",170.4,70,80,386,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+917,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Dehradun, Uttarakhand",20.0,60,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+918,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Surat, Gujarat",9.7,80,80,154,GWM Ora Ora 03 (257 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+919,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Raipur, Chhattisgarh",142.0,80,80,108,Tata Tiago EV (160 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+920,S-M_B-D_A-D_E-D_R-D,manual,"Goa (Panaji), Goa","Mumbai, Maharashtra",216.7,80,80,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+921,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Chennai, Tamil Nadu",389.2,80,80,120,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+922,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Ranchi, Jharkhand",592.6,80,80,157,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+923,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Nashik, Maharashtra",325.0,80,80,221,Kia EV9 (387 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+924,S-M_B-U_A-D_E-D_R-U,manual,"Srinagar, Jammu & Kashmir","Jamshedpur, Jharkhand",2000.0,100,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+925,S-M_B-D_A-U_E-U_R-U,manual,"Rann of Kutch, Gujarat","Amritsar, Punjab",1033.0,80,99,393,IM Motors IM5 (353 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+926,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Surat, Gujarat",419.6,80,80,311,BYD Atto 3 (378 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+927,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Madurai, Tamil Nadu",1064.5,80,78,160,Leapmotor C10 (377 km),MULTI_STOP,Route succeeds with 4 charging stops.
+928,S-M_B-D_A-U_E-D_R-U,manual,"Mysuru, Karnataka","Srinagar, Jammu & Kashmir",1418.0,80,79,173,Mahindra XEV 9e (391 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+929,S-M_B-D_A-U_E-U_R-D,manual,"Varanasi, Uttar Pradesh","Dehradun, Uttarakhand",407.2,80,57,109,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 3 charging stops.
+930,S-M_B-D_A-D_E-D_R-D,manual,"Vadodara, Gujarat","Udaipur, Rajasthan",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+931,S-M_B-U_A-D_E-D_R-D,manual,"Pune, Maharashtra","Thiruvananthapuram, Kerala",167.9,70,80,157,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+932,S-M_B-U_A-D_E-D_R-U,manual,"Mumbai, Maharashtra","Chandigarh, Punjab",17.0,40,80,182,Kia EV6 (383 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+933,S-A_B-D_A-D_E-D_R-D,automatic,Current Location (GPS),"Kochi, Kerala",5.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+934,S-M_B-D_A-U_E-U_R-U,manual,"Kargil, Ladakh","Vadodara, Gujarat",14.0,80,72,327,BMW iX3 (572 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+935,S-M_B-U_A-U_E-U_R-D,manual,"Pune, Maharashtra","Bhopal, Madhya Pradesh",29.0,2,88,287,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+936,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Pune, Maharashtra",1701.0,80,100,237,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+937,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Guwahati, Assam",107.0,60,66,378,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+938,S-M_B-U_A-D_E-U_R-U,manual,"Kanpur, Uttar Pradesh","Ahmedabad, Gujarat",398.0,5,80,212,Kia EV9 (387 km),EDGE_LOW_BATTERY,Route succeeds with 2 charging stops.
+939,S-M_B-D_A-D_E-U_R-D,manual,"Leh, Ladakh","Kolkata, West Bengal",11.0,80,80,375,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+940,S-M_B-U_A-U_E-U_R-D,manual,"Chennai, Tamil Nadu","Nashik, Maharashtra",226.7,50,52,352,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 2 charging stops.
+941,S-M_B-D_A-U_E-D_R-D,manual,"Srinagar, Jammu & Kashmir","Udaipur, Rajasthan",9.0,80,62,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+942,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Jamshedpur, Jharkhand",531.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+943,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Gurugram, Haryana",14.0,60,80,259,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+944,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Shimla, Himachal Pradesh",1635.0,80,80,167,Nissan Ariya (340 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+945,S-M_B-U_A-D_E-U_R-D,manual,"Bengaluru, Karnataka","Madurai, Tamil Nadu",121.0,1,80,189,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+946,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",480.3,50,80,161,Omoda E5 (278 km),MULTI_STOP,Route succeeds with 3 charging stops.
+947,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Varanasi, Uttar Pradesh",1822.0,80,86,213,IM Motors IM6 (429 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+948,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),Puducherry,23.0,2,80,378,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+949,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Indore, Madhya Pradesh",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid battery keystroke (""150"") rejected; default 80% retained, route proceeds at 80%."
+950,S-M_B-D_A-D_E-U_R-U,manual,"Mysuru, Karnataka","Rann of Kutch, Gujarat",18.0,80,80,344,GWM Ora Ora 03 (257 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+951,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Surat, Gujarat",10.3,100,80,157,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+952,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Pune, Maharashtra",9.0,80,87,357,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+953,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Siliguri, West Bengal",1557.0,80,50,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+954,S-M_B-U_A-D_E-U_R-D,manual,"Bhubaneswar, Odisha","Udaipur, Rajasthan",8.1,90,80,350,Dongfeng Box (229 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+955,S-A_B-U_A-D_E-U_R-D,automatic,Current Location (GPS),"Kargil, Ladakh",301.0,1,80,388,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+956,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Vadodara, Gujarat",5.0,80,99,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+957,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Indore, Madhya Pradesh",407.2,80,80,132,Kia EV5 (360 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+958,S-M_B-D_A-U_E-D_R-D,manual,"Patna, Bihar","Jamshedpur, Jharkhand",158.1,80,90,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+959,S-M_B-D_A-U_E-D_R-U,manual,"Nagpur, Maharashtra","Thiruvananthapuram, Kerala",19.0,80,51,188,Deepal S05 (321 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+960,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",87.0,2,85,387,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+961,S-M_B-U_A-D_E-D_R-D,manual,"Madurai, Tamil Nadu","Patna, Bihar",11.0,60,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+962,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Rann of Kutch, Gujarat",213.0,80,80,100,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+963,S-M_B-U_A-U_E-D_R-D,manual,"Srinagar, Jammu & Kashmir","Kargil, Ladakh",183.7,60,85,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+964,S-M_B-U_A-D_E-U_R-U,manual,"Bhubaneswar, Odisha","Bhopal, Madhya Pradesh",1734.0,100,80,267,Mahindra BE 6 (392 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+965,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Kargil, Ladakh",367.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 2 charging stops.
+966,S-A_B-D_A-D_E-D_R-U,automatic,Current Location (GPS),"Mysuru, Karnataka",9.8,80,80,193,IM Motors IM6 (429 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+967,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Pune, Maharashtra",7.0,80,57,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+968,S-A_B-U_A-U_E-U_R-D,automatic,Current Location (GPS),"Surat, Gujarat",344.0,2,81,181,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+969,S-M_B-U_A-U_E-U_R-D,manual,"Dehradun, Uttarakhand","Guwahati, Assam",699.1,100,82,186,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+970,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Lucknow, Uttar Pradesh",392.0,80,50,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 4 charging stops.
+971,S-A_B-U_A-U_E-U_R-U,automatic,Current Location (GPS),"Mysuru, Karnataka",502.4,60,90,250,Toyota bZ4X (311 km),MULTI_STOP,Route succeeds with 2 charging stops.
+972,S-A_B-D_A-D_E-U_R-U,automatic,Current Location (GPS),"Nagpur, Maharashtra",315.4,80,80,362,Nissan Ariya (340 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+973,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Vadodara, Gujarat",63.3,70,80,181,IM Motors IM5 (353 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+974,S-A_B-U_A-D_E-U_R-U,automatic,Current Location (GPS),"Manali, Himachal Pradesh",824.6,50,80,106,Audi Q8 e-tron (383 km),MULTI_STOP,Route succeeds with 3 charging stops.
+975,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",1928.0,100,80,157,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+976,S-A_B-D_A-D_E-U_R-D,automatic,Current Location (GPS),"Dehradun, Uttarakhand",1033.0,80,80,301,Dongfeng Box (229 km),UNREACHABLE,RouteInfeasibleError expected (no compatible charger found).
+977,S-A_B-D_A-U_E-D_R-U,automatic,Current Location (GPS),"Raipur, Chhattisgarh",419.6,80,67,142,Nissan Leaf (228 km),MULTI_STOP,Route succeeds with 3 charging stops.
+978,S-A_B-U_A-D_E-D_R-U,automatic,Current Location (GPS),"Srinagar, Jammu & Kashmir",1461.0,60,80,146,BYD Seal (378 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+979,S-A_B-D_A-U_E-D_R-D,automatic,Current Location (GPS),"Bhubaneswar, Odisha",100.0,80,80,157,Dongfeng Box (229 km),INVALID_INPUT,"Invalid Charge-To-Target keystroke (""20"") rejected; default 80% retained."
+980,S-M_B-D_A-D_E-U_R-D,manual,"Pune, Maharashtra","Mumbai, Maharashtra",1726.0,80,80,173,Dongfeng Box (229 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+981,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Bengaluru, Karnataka",19.0,20,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 1 charging stop.
+982,S-M_B-U_A-U_E-D_R-D,manual,"Shillong, Meghalaya","Gurugram, Haryana",169.0,60,100,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+983,S-M_B-D_A-D_E-U_R-D,manual,"Gangtok, Sikkim","Indore, Madhya Pradesh",10.0,80,80,123,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+984,S-M_B-D_A-D_E-U_R-D,manual,"Coimbatore, Tamil Nadu","Ranchi, Jharkhand",252.0,80,80,400,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+985,S-M_B-U_A-D_E-D_R-U,manual,"Mumbai, Maharashtra","Noida, Uttar Pradesh",242.0,1,80,205,DENZA D9 (454 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.
+986,S-M_B-U_A-D_E-D_R-U,manual,"Patna, Bihar","Madurai, Tamil Nadu",1283.0,100,80,142,Nissan Leaf (228 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+987,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",263.4,80,100,147,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+988,S-M_B-D_A-D_E-D_R-D,manual,"Kolkata, West Bengal","Delhi, NCT",179.0,80,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 1 charging stop.
+989,S-M_B-D_A-U_E-D_R-D,manual,"Goa (Panaji), Goa","Leh, Ladakh",255.6,80,62,157,Dongfeng Box (229 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+990,S-M_B-D_A-D_E-U_R-U,manual,"Chandigarh, Punjab","Jodhpur, Rajasthan",1627.0,80,80,103,Toyota bZ4X (311 km),EDGE_LONG_TRIP,RouteTooLongError expected (needs >5 stops).
+991,S-A_B-D_A-U_E-U_R-U,automatic,Current Location (GPS),"Leh, Ladakh",144.5,80,99,234,Kia EV5 (360 km),NO_CHARGE_NEEDED,Route succeeds with 0 charging stops.
+992,S-M_B-U_A-D_E-U_R-U,manual,"Dehradun, Uttarakhand","Raipur, Chhattisgarh",234.0,10,80,234,Tata Tiago EV (160 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+993,S-M_B-U_A-D_E-U_R-D,manual,"Bengaluru, Karnataka","Thiruvananthapuram, Kerala",396.0,10,80,331,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 3 charging stops.
+994,S-M_B-U_A-D_E-D_R-D,manual,"Delhi, NCT","Kanpur, Uttar Pradesh",187.0,100,80,157,Dongfeng Box (229 km),BOUNDARY_VALUE,Route succeeds with 0 charging stops.
+995,S-M_B-U_A-D_E-U_R-U,manual,"Vadodara, Gujarat","Noida, Uttar Pradesh",167.9,70,80,376,Nissan Leaf (228 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+996,S-M_B-U_A-D_E-U_R-U,manual,"Pune, Maharashtra","Indore, Madhya Pradesh",271.4,90,80,238,BMW i3 (212 km),SINGLE_STOP,Route succeeds with 1 charging stop.
+997,S-M_B-D_A-D_E-D_R-U,manual,"Kargil, Ladakh","Noida, Uttar Pradesh",1819.0,80,80,172,Mercedes-Benz EQS / EQS SUV (617 km),EDGE_LONG_TRIP,Route succeeds with 4 charging stops.
+998,S-A_B-D_A-U_E-U_R-D,automatic,Current Location (GPS),"Rajkot, Gujarat",776.6,80,89,350,Dongfeng Box (229 km),MULTI_STOP,Route succeeds with 4 charging stops.
+999,S-M_B-D_A-D_E-D_R-D,manual,Pondicherry Rural Outpost,"Rann of Kutch, Gujarat",7.0,80,80,157,Dongfeng Box (229 km),EDGE_SHORT_TRIP,Route succeeds with 0 charging stops.
+1000,S-A_B-U_A-D_E-D_R-D,automatic,Current Location (GPS),"Thiruvananthapuram, Kerala",142.0,10,80,157,Dongfeng Box (229 km),EDGE_LOW_BATTERY,Route succeeds with 1 charging stop.

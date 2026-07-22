@@ -54,3 +54,15 @@ ios/Pods/
 *.swo
 *~
 .#*
+
+# Nested scaffold project (ios-app) — regenerated via
+# npm install / pod install, never needed for store builds
+ios-app/node_modules/
+ios-app/ios/Pods/
+ios-app/ios/build/
+
+# Unused react-native-init scaffolding, not referenced by the app
+TempNativeShell/
+
+# Native build cache (CMake)
+android/app/.cxx/
