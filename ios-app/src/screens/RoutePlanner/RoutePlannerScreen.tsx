@@ -5,7 +5,7 @@
  * Output: route result with map preview and charging stops
  */
 
-import React, {useState, useCallback, useMemo, useEffect, useRef} from 'react';
+import React, {useState, useCallback, useMemo, useEffect} from 'react';
 import {
   View,
   Text,
@@ -36,7 +36,6 @@ import {
   applyBufferedRange,
 } from '../../utils/rangeCalculations';
 import {useAppSettings} from '../../context/AppSettingsContext';
-import {requestAdminUnlock} from '../../utils/adminAccess';
 import {COLORS, GLASS} from '../../constants/colors';
 import {Vehicle, PlaceResult, RouteResult} from '../../types';
 
@@ -46,29 +45,9 @@ const MIN_ARRIVAL_BATTERY_PERCENT = 5;
 const MAX_ARRIVAL_BATTERY_PERCENT = 30;
 const MIN_CHARGE_TO_TARGET_PERCENT = 50;
 const MAX_CHARGE_TO_TARGET_PERCENT = 100;
-const ADMIN_UNLOCK_TAP_COUNT = 7;
-const ADMIN_UNLOCK_TAP_WINDOW_MS = 1500;
 
 export default function RoutePlannerScreen() {
   const {settings, isLoaded} = useAppSettings();
-
-  // Hidden Garage/Admin entry point: tap the app name 7x within 1.5s.
-  // No visible affordance on purpose — see src/utils/adminAccess.ts.
-  const adminTapCount = useRef(0);
-  const adminTapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const handleAppNamePress = useCallback(() => {
-    adminTapCount.current += 1;
-    if (adminTapTimer.current) {
-      clearTimeout(adminTapTimer.current);
-    }
-    adminTapTimer.current = setTimeout(() => {
-      adminTapCount.current = 0;
-    }, ADMIN_UNLOCK_TAP_WINDOW_MS);
-    if (adminTapCount.current >= ADMIN_UNLOCK_TAP_COUNT) {
-      adminTapCount.current = 0;
-      requestAdminUnlock();
-    }
-  }, []);
 
   // ── Form state ────────────────────────────────────────────────────────────
   const [vehicle, setVehicle] = useState<Vehicle | null>(null);
@@ -395,9 +374,7 @@ export default function RoutePlannerScreen() {
           keyboardShouldPersistTaps="handled">
           {/* Header */}
           <View style={styles.header}>
-            <TouchableOpacity activeOpacity={1} onPress={handleAppNamePress}>
-              <Text style={styles.appName}>⚡ ChargeRoute</Text>
-            </TouchableOpacity>
+            <Text style={styles.appName}>⚡ ChargeRoute</Text>
             <Text style={styles.heroTitle}>Plan Your EV Journey</Text>
             <Text style={styles.heroSubtitle}>
               Find the best route. Charge smart. Arrive with confidence.

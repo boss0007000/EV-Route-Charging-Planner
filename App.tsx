@@ -1,16 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {StatusBar, StyleSheet, View, Text, Modal, SafeAreaView, TouchableOpacity} from 'react-native';
+import {StatusBar, StyleSheet, View, Text} from 'react-native';
 import {BlurView} from '@react-native-community/blur';
 
 import RoutePlannerScreen from './src/screens/RoutePlanner/RoutePlannerScreen';
 import ChargerMapScreen from './src/screens/ChargerMap/ChargerMapScreen';
-import AdminScreen from './src/screens/Admin/AdminScreen';
 import {AppSettingsProvider} from './src/context/AppSettingsContext';
 import {initDatabase} from './src/database/schema';
-import {subscribeAdminUnlock} from './src/utils/adminAccess';
 import {COLORS, GLASS} from './src/constants/colors';
 
 const TAB_ICONS: Record<string, string> = {
@@ -30,14 +28,10 @@ const TabIcon = ({label, focused}: {label: string; focused: boolean}) => (
 const Tab = createBottomTabNavigator();
 
 function App(): React.JSX.Element {
-  const [adminVisible, setAdminVisible] = useState(false);
-
   useEffect(() => {
     // Initialise SQLite schema on first launch
     initDatabase().catch(err => console.error('DB init error', err));
   }, []);
-
-  useEffect(() => subscribeAdminUnlock(() => setAdminVisible(true)), []);
 
   return (
     <SafeAreaProvider>
@@ -72,23 +66,6 @@ function App(): React.JSX.Element {
             <Tab.Screen name="Map" component={ChargerMapScreen} />
           </Tab.Navigator>
         </NavigationContainer>
-
-        {/* Garage/Admin — no tab, no visible entry point. Opened only via
-            the hidden tap gesture on the app name in RoutePlannerScreen. */}
-        <Modal
-          visible={adminVisible}
-          animationType="slide"
-          presentationStyle="pageSheet"
-          onRequestClose={() => setAdminVisible(false)}>
-          <SafeAreaView style={styles.adminModal}>
-            <TouchableOpacity
-              style={styles.adminCloseBtn}
-              onPress={() => setAdminVisible(false)}>
-              <Text style={styles.adminCloseBtnText}>✕ Close</Text>
-            </TouchableOpacity>
-            <AdminScreen />
-          </SafeAreaView>
-        </Modal>
       </AppSettingsProvider>
     </SafeAreaProvider>
   );
@@ -123,20 +100,6 @@ const styles = StyleSheet.create({
   },
   tabIconFocused: {
     opacity: 1,
-  },
-  adminModal: {
-    flex: 1,
-    backgroundColor: COLORS.background,
-  },
-  adminCloseBtn: {
-    alignSelf: 'flex-end',
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-  },
-  adminCloseBtnText: {
-    fontSize: 15,
-    fontWeight: '600',
-    color: COLORS.primary,
   },
 });
 
