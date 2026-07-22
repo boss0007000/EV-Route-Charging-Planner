@@ -1,0 +1,16 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*", "index.js", "App.tsx", "jest.setup.js", "__tests__/**/*"],
+  "exclude": ["node_modules", "android", "ios", "admin"]
+}

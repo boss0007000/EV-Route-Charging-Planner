@@ -1,0 +1,938 @@
+[
+  {
+    "id": 1,
+    "manufacturer": "Dongfeng Motor",
+    "brand": "Dongfeng",
+    "model": "Box",
+    "trim": "42.3 kWh",
+    "usableCapacityKwh": 40,
+    "efficiencyMixedWhPerKm": 157,
+    "maxDcChargingKw": 61,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 35,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 2,
+    "manufacturer": "Dongfeng Motor",
+    "brand": "Dongfeng",
+    "model": "Box",
+    "trim": "31.4 kWh",
+    "usableCapacityKwh": 30,
+    "efficiencyMixedWhPerKm": 153,
+    "maxDcChargingKw": 57,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 3,
+    "manufacturer": "Dongfeng Motor",
+    "brand": "Dongfeng",
+    "model": "Nammi 01",
+    "trim": "Standard",
+    "usableCapacityKwh": 40,
+    "efficiencyMixedWhPerKm": 157,
+    "maxDcChargingKw": 61,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 4,
+    "manufacturer": "Dongfeng Motor",
+    "brand": "Dongfeng",
+    "model": "Vigo EV",
+    "trim": "",
+    "usableCapacityKwh": 50,
+    "efficiencyMixedWhPerKm": 140,
+    "maxDcChargingKw": 60,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 18,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 5,
+    "manufacturer": "BYD",
+    "brand": "BYD",
+    "model": "Atto 3",
+    "trim": "(MY23-24) 60.5 kWh",
+    "usableCapacityKwh": 58,
+    "efficiencyMixedWhPerKm": 138,
+    "maxDcChargingKw": 88,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 35,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": 61,
+    "chargingCurve": null
+  },
+  {
+    "id": 6,
+    "manufacturer": "BYD",
+    "brand": "BYD",
+    "model": "Atto 3",
+    "trim": "(MY25)",
+    "usableCapacityKwh": 60.5,
+    "efficiencyMixedWhPerKm": 155,
+    "maxDcChargingKw": 110,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 7,
+    "manufacturer": "BYD",
+    "brand": "BYD",
+    "model": "Atto 1",
+    "trim": "",
+    "usableCapacityKwh": 30,
+    "efficiencyMixedWhPerKm": 137,
+    "maxDcChargingKw": 65,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 8,
+    "manufacturer": "BYD",
+    "brand": "BYD",
+    "model": "Atto 2",
+    "trim": "",
+    "usableCapacityKwh": 46,
+    "efficiencyMixedWhPerKm": 162,
+    "maxDcChargingKw": 82,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 9,
+    "manufacturer": "BYD",
+    "brand": "BYD",
+    "model": "Seal",
+    "trim": "",
+    "usableCapacityKwh": 61.4,
+    "efficiencyMixedWhPerKm": 146,
+    "maxDcChargingKw": 110,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 10,
+    "manufacturer": "BYD",
+    "brand": "BYD",
+    "model": "M6",
+    "trim": "",
+    "usableCapacityKwh": 50,
+    "efficiencyMixedWhPerKm": 160,
+    "maxDcChargingKw": 89,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 11,
+    "manufacturer": "BYD",
+    "brand": "DENZA",
+    "model": "D9",
+    "trim": "EV MPV",
+    "usableCapacityKwh": 103.36,
+    "efficiencyMixedWhPerKm": 205,
+    "maxDcChargingKw": 166,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 30,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 12,
+    "manufacturer": "GAC Group",
+    "brand": "GAC Aion",
+    "model": "Aion V",
+    "trim": "Luxury (75.3 kWh)",
+    "usableCapacityKwh": 75,
+    "efficiencyMixedWhPerKm": 147,
+    "maxDcChargingKw": 180,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 13,
+    "manufacturer": "Changan",
+    "brand": "Deepal",
+    "model": "S07",
+    "trim": "Long Range (EU spec)",
+    "usableCapacityKwh": 77.6,
+    "efficiencyMixedWhPerKm": 190,
+    "maxDcChargingKw": 93,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 14,
+    "manufacturer": "Changan",
+    "brand": "Deepal",
+    "model": "S05",
+    "trim": "4WD (EU spec)",
+    "usableCapacityKwh": 67,
+    "efficiencyMixedWhPerKm": 188,
+    "maxDcChargingKw": 200,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 15,
+    "manufacturer": "Changan",
+    "brand": "Deepal",
+    "model": "Lumin",
+    "trim": "micro EV",
+    "usableCapacityKwh": 26,
+    "efficiencyMixedWhPerKm": 124,
+    "maxDcChargingKw": 50,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 35,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 16,
+    "manufacturer": "SAIC",
+    "brand": "IM Motors",
+    "model": "IM5",
+    "trim": "Standard / Long Range / Ultra Long Range / Performance AWD",
+    "usableCapacityKwh": 71,
+    "efficiencyMixedWhPerKm": 181,
+    "maxDcChargingKw": 396,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 17,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 17,
+    "manufacturer": "SAIC",
+    "brand": "IM Motors",
+    "model": "IM6",
+    "trim": "Premium / Platinum / Performance AWD",
+    "usableCapacityKwh": 92,
+    "efficiencyMixedWhPerKm": 193,
+    "maxDcChargingKw": 396,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 17,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 18,
+    "manufacturer": "XPeng",
+    "brand": "XPeng",
+    "model": "G6",
+    "trim": "Standard Range 66 kWh",
+    "usableCapacityKwh": 65.3,
+    "efficiencyMixedWhPerKm": 179,
+    "maxDcChargingKw": 280,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 20,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 19,
+    "manufacturer": "XPeng",
+    "brand": "XPeng",
+    "model": "G6",
+    "trim": "Long Range 87.5 kWh",
+    "usableCapacityKwh": 87.5,
+    "efficiencyMixedWhPerKm": 182,
+    "maxDcChargingKw": 280,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 20,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 20,
+    "manufacturer": "Geely",
+    "brand": "Riddara",
+    "model": "RD6",
+    "trim": "4WD (top spec)",
+    "usableCapacityKwh": 83,
+    "efficiencyMixedWhPerKm": 221,
+    "maxDcChargingKw": 120,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 32,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 21,
+    "manufacturer": "Mahindra",
+    "brand": "Mahindra",
+    "model": "BE 6",
+    "trim": "59 kWh",
+    "usableCapacityKwh": 56.2,
+    "efficiencyMixedWhPerKm": 129,
+    "maxDcChargingKw": 175,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 22,
+    "manufacturer": "Mahindra",
+    "brand": "Mahindra",
+    "model": "BE 6",
+    "trim": "79 kWh",
+    "usableCapacityKwh": 75.18,
+    "efficiencyMixedWhPerKm": 150,
+    "maxDcChargingKw": 175,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 23,
+    "manufacturer": "Mahindra",
+    "brand": "Mahindra",
+    "model": "XEV 9e",
+    "trim": "",
+    "usableCapacityKwh": 75.18,
+    "efficiencyMixedWhPerKm": 173,
+    "maxDcChargingKw": 175,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 24,
+    "manufacturer": "Seres Group",
+    "brand": "Seres",
+    "model": "Seres 3",
+    "trim": "",
+    "usableCapacityKwh": 50,
+    "efficiencyMixedWhPerKm": 173,
+    "maxDcChargingKw": 56,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 25,
+    "manufacturer": "Great Wall Motor",
+    "brand": "GWM Ora",
+    "model": "Ora 03",
+    "trim": "",
+    "usableCapacityKwh": 44,
+    "efficiencyMixedWhPerKm": 154,
+    "maxDcChargingKw": 64,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 26,
+    "manufacturer": "Leapmotor (Stellantis JV)",
+    "brand": "Leapmotor",
+    "model": "C10",
+    "trim": "69 kWh RWD (EU spec)",
+    "usableCapacityKwh": 67,
+    "efficiencyMixedWhPerKm": 160,
+    "maxDcChargingKw": 84,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 27,
+    "manufacturer": "Tata Motors",
+    "brand": "Tata",
+    "model": "Tiago EV",
+    "trim": "",
+    "usableCapacityKwh": 19.2,
+    "efficiencyMixedWhPerKm": 108,
+    "maxDcChargingKw": 25,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 28,
+    "manufacturer": "Tata Motors",
+    "brand": "Tata",
+    "model": "Curvv EV",
+    "trim": "",
+    "usableCapacityKwh": 45,
+    "efficiencyMixedWhPerKm": 132,
+    "maxDcChargingKw": 70,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 40,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 29,
+    "manufacturer": "SAIC",
+    "brand": "MG",
+    "model": "MG4",
+    "trim": "Electric / X",
+    "usableCapacityKwh": 51,
+    "efficiencyMixedWhPerKm": 147,
+    "maxDcChargingKw": 117,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 30,
+    "manufacturer": "Nissan",
+    "brand": "Nissan",
+    "model": "Leaf",
+    "trim": "40 kWh (ZE1)",
+    "usableCapacityKwh": 36,
+    "efficiencyMixedWhPerKm": 142,
+    "maxDcChargingKw": 50,
+    "supportedConnectors": [
+      "CHAdeMO",
+      "Type1"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 31,
+    "manufacturer": "Nissan",
+    "brand": "Nissan",
+    "model": "Leaf",
+    "trim": "62 kWh e+",
+    "usableCapacityKwh": 56,
+    "efficiencyMixedWhPerKm": 150,
+    "maxDcChargingKw": 100,
+    "supportedConnectors": [
+      "CHAdeMO",
+      "Type1"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 32,
+    "manufacturer": "Nissan",
+    "brand": "Nissan",
+    "model": "Ariya",
+    "trim": "",
+    "usableCapacityKwh": 63,
+    "efficiencyMixedWhPerKm": 167,
+    "maxDcChargingKw": 130,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 35,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 33,
+    "manufacturer": "Tesla",
+    "brand": "Tesla",
+    "model": "Model 3",
+    "trim": "",
+    "usableCapacityKwh": 57.5,
+    "efficiencyMixedWhPerKm": 116,
+    "maxDcChargingKw": 250,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 25,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 34,
+    "manufacturer": "Tesla",
+    "brand": "Tesla",
+    "model": "Model Y",
+    "trim": "",
+    "usableCapacityKwh": 55,
+    "efficiencyMixedWhPerKm": 143,
+    "maxDcChargingKw": 250,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 18,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 35,
+    "manufacturer": "Hyundai",
+    "brand": "Hyundai",
+    "model": "Ioniq Electric / Kona Electric",
+    "trim": "",
+    "usableCapacityKwh": 36,
+    "efficiencyMixedWhPerKm": 132,
+    "maxDcChargingKw": 50,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 36,
+    "manufacturer": "Kia Corporation",
+    "brand": "Kia",
+    "model": "EV5",
+    "trim": "Long Range (export NMC spec)",
+    "usableCapacityKwh": 78,
+    "efficiencyMixedWhPerKm": 195,
+    "maxDcChargingKw": 150,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 30,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 37,
+    "manufacturer": "Kia Corporation",
+    "brand": "Kia",
+    "model": "EV6",
+    "trim": "Long Range (export spec)",
+    "usableCapacityKwh": 77.4,
+    "efficiencyMixedWhPerKm": 182,
+    "maxDcChargingKw": 350,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 18,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 38,
+    "manufacturer": "Kia Corporation",
+    "brand": "Kia",
+    "model": "EV9",
+    "trim": "AWD Long Range (export spec)",
+    "usableCapacityKwh": 95,
+    "efficiencyMixedWhPerKm": 221,
+    "maxDcChargingKw": 210,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 24,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 39,
+    "manufacturer": "Chery Automobile",
+    "brand": "Omoda",
+    "model": "E5",
+    "trim": "",
+    "usableCapacityKwh": 55,
+    "efficiencyMixedWhPerKm": 178,
+    "maxDcChargingKw": 80,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 28,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 40,
+    "manufacturer": "Hyundai Motor Company",
+    "brand": "Hyundai",
+    "model": "Ioniq 5",
+    "trim": "Long Range AWD",
+    "usableCapacityKwh": 77.4,
+    "efficiencyMixedWhPerKm": 180,
+    "maxDcChargingKw": 230,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 18,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 41,
+    "manufacturer": "BMW",
+    "brand": "BMW",
+    "model": "i3",
+    "trim": "120 Ah (final/largest-battery spec)",
+    "usableCapacityKwh": 37.9,
+    "efficiencyMixedWhPerKm": 161,
+    "maxDcChargingKw": 50,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 42,
+    "manufacturer": "BMW",
+    "brand": "BMW",
+    "model": "i4",
+    "trim": "eDrive35 / eDrive40 / M60",
+    "usableCapacityKwh": 63.9,
+    "efficiencyMixedWhPerKm": 156,
+    "maxDcChargingKw": 180,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 32,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 43,
+    "manufacturer": "BMW",
+    "brand": "BMW",
+    "model": "iX3",
+    "trim": "Gen1 M Sport (50 xDrive)",
+    "usableCapacityKwh": 74,
+    "efficiencyMixedWhPerKm": 192,
+    "maxDcChargingKw": 150,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 34,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 44,
+    "manufacturer": "BMW",
+    "brand": "BMW",
+    "model": "iX3",
+    "trim": "Gen2 40/50 xDrive",
+    "usableCapacityKwh": 108.7,
+    "efficiencyMixedWhPerKm": 171,
+    "maxDcChargingKw": 400,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 20,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 45,
+    "manufacturer": "Audi (Volkswagen Group)",
+    "brand": "Audi",
+    "model": "Q4 e-tron",
+    "trim": "45 / Sportback / 55 quattro",
+    "usableCapacityKwh": 77,
+    "efficiencyMixedWhPerKm": 195,
+    "maxDcChargingKw": 175,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 28,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 46,
+    "manufacturer": "Audi (Volkswagen Group)",
+    "brand": "Audi",
+    "model": "Q8 e-tron",
+    "trim": "",
+    "usableCapacityKwh": 89,
+    "efficiencyMixedWhPerKm": 209,
+    "maxDcChargingKw": 155,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 47,
+    "manufacturer": "Mercedes-Benz",
+    "brand": "Mercedes-Benz",
+    "model": "EQA",
+    "trim": "EQA 350 4MATIC",
+    "usableCapacityKwh": 66.5,
+    "efficiencyMixedWhPerKm": 192,
+    "maxDcChargingKw": 100,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 48,
+    "manufacturer": "Mercedes-Benz",
+    "brand": "Mercedes-Benz",
+    "model": "EQB",
+    "trim": "EQB 250",
+    "usableCapacityKwh": 66.5,
+    "efficiencyMixedWhPerKm": 173,
+    "maxDcChargingKw": 100,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 49,
+    "manufacturer": "Mercedes-Benz",
+    "brand": "Mercedes-Benz",
+    "model": "EQE / EQE SUV",
+    "trim": "EQE 350 4MATIC / EQE 350+ / EQE SUV 350 4MATIC",
+    "usableCapacityKwh": 96,
+    "efficiencyMixedWhPerKm": 173,
+    "maxDcChargingKw": 170,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 50,
+    "manufacturer": "Mercedes-Benz",
+    "brand": "Mercedes-Benz",
+    "model": "EQS / EQS SUV",
+    "trim": "EQS 450+ / EQS 450 4MATIC SUV / Mercedes-AMG EQS 53 4MATIC+",
+    "usableCapacityKwh": 118,
+    "efficiencyMixedWhPerKm": 172,
+    "maxDcChargingKw": 200,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 51,
+    "manufacturer": "Toyota",
+    "brand": "Toyota",
+    "model": "bZ4X",
+    "trim": "2023 (UK-spec import example)",
+    "usableCapacityKwh": 64,
+    "efficiencyMixedWhPerKm": 185,
+    "maxDcChargingKw": 150,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": null,
+    "chargingTime20To80Min": null,
+    "chargingTime0To100Min": null,
+    "chargingCurve": null
+  },
+  {
+    "id": 52,
+    "manufacturer": "BYD",
+    "brand": "BYD",
+    "model": "Seal",
+    "trim": "AWD Performance",
+    "usableCapacityKwh": 82.5,
+    "efficiencyMixedWhPerKm": 192,
+    "maxDcChargingKw": 150,
+    "supportedConnectors": [
+      "CCS2",
+      "Type2"
+    ],
+    "chargingTime10To80Min": 26,
+    "chargingTime20To80Min": 20,
+    "chargingTime0To100Min": 95,
+    "chargingCurve": null
+  }
+]
