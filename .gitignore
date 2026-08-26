@@ -36,6 +36,10 @@ android/.gradle/
 android/local.properties
 android/app/release/
 
+# Upload/release keystore — never commit this, it signs the Play Store build
+android/app/*.keystore
+!android/app/debug.keystore
+
 # iOS CocoaPods
 *.xcworkspace
 Podfile.lock
@@ -55,14 +59,13 @@ ios/Pods/
 *~
 .#*
 
-# Nested scaffold project (ios-app) — regenerated via
-# npm install / pod install, never needed for store builds
-ios-app/node_modules/
-ios-app/ios/Pods/
-ios-app/ios/build/
-
-# Unused react-native-init scaffolding, not referenced by the app
-TempNativeShell/
-
 # Native build cache (CMake)
 android/app/.cxx/
+
+# Pre-rebuild broken iOS scaffolding, kept temporarily for reference only —
+# safe to delete once the regenerated ios/ project is confirmed working
+ios.OLD_BROKEN_unused/
+ios-app.OLD_BROKEN_unused/
+
+# Local Claude Code tooling state, not app code
+.claude/

@@ -14,8 +14,14 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'TempNativeShell' do
+target 'EVRoutePlanner' do
   config = use_native_modules!
+
+  # react-native-maps is used with PROVIDER_GOOGLE (see RoutePlannerScreen.tsx /
+  # ChargerMapScreen.tsx) so the underlying Google Maps iOS SDK pods are required
+  # in addition to autolinking. See https://github.com/react-native-maps/react-native-maps/blob/master/docs/installation.md#ios
+  pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
 
   use_react_native!(
     :path => config[:reactNativePath],
@@ -23,7 +29,7 @@ target 'TempNativeShell' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'TempNativeShellTests' do
+  target 'EVRoutePlannerTests' do
     inherit! :complete
     # Pods for testing
   end
