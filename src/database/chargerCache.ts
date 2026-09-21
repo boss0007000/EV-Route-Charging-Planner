@@ -93,23 +93,23 @@ export async function cacheChargersForTile(
   const bounds = tileKeyToBounds(tileKey);
   const now = Date.now();
 
-  await db.transaction(async tx => {
+  await db.transaction(tx => {
     // Upsert tile record
-    await tx.executeSql(
+    tx.executeSql(
       `INSERT OR REPLACE INTO charger_tile_cache (tile_key, min_lat, max_lat, min_lng, max_lng, fetched_at)
        VALUES (?, ?, ?, ?, ?, ?)`,
       [tileKey, bounds.minLat, bounds.maxLat, bounds.minLng, bounds.maxLng, now],
     );
 
     // Delete stale stations for this tile
-    await tx.executeSql(
+    tx.executeSql(
       'DELETE FROM charger_stations WHERE tile_key = ?',
       [tileKey],
     );
 
     // Insert new stations
     for (const station of stations) {
-      await tx.executeSql(
+      tx.executeSql(
         `INSERT OR REPLACE INTO charger_stations
          (id, tile_key, network_name, address, latitude, longitude,
           connectors_json, max_power_kw, pricing_info, is_live_status_avail, last_updated)

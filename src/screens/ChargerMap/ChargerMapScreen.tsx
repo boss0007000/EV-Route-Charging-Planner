@@ -97,7 +97,8 @@ export default function ChargerMapScreen() {
           () => setIsThrottled(true),
         );
         setStations(results);
-      } catch {
+      } catch (error) {
+        console.warn('[ChargerMap] loadChargers failed', error);
         // Keep existing stations on error
       } finally {
         setLoading(false);
