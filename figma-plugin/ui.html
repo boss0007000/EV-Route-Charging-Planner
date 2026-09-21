@@ -1,0 +1,38 @@
+<style>
+  body { font: 12px Inter, sans-serif; margin: 12px; color: #111827 }
+  h3 { margin: 0 0 8px; font-size: 14px }
+  label { display: block; margin: 10px 0 4px; color: #6B7280 }
+  input[type=text] { width: 100%; box-sizing: border-box; padding: 6px }
+  button { margin-top: 14px; width: 100%; padding: 10px; border: 0; border-radius: 6px;
+           background: #16A34A; color: #fff; font-weight: 600; cursor: pointer }
+  .hint { color: #6B7280; margin-top: 6px }
+</style>
+<h3>ChargeRoute Ad Builder</h3>
+<label>1. Pick the app screenshots (store-assets/ad-screenshots/*.png)</label>
+<input id="files" type="file" accept="image/png" multiple>
+<div class="hint" id="count">No files chosen</div>
+<label>2. Headlines (one per screenshot, in file-name order, one per line)</label>
+<textarea id="heads" rows="8" style="width:100%;box-sizing:border-box">Your route. Your charging stops. Planned.
+Plan Manchester to Edinburgh with 1 stop.
+Every charger on one map.
+Filter by connector and power.
+Pick your exact EV.
+Charge smart. Arrive with confidence.</textarea>
+<label>3. Call to action</label>
+<input id="cta" type="text" value="Get ChargeRoute on Google Play">
+<button id="go">Create ad frames</button>
+<script>
+const files = document.getElementById('files');
+files.onchange = () => { document.getElementById('count').textContent = files.files.length + ' file(s)'; };
+document.getElementById('go').onclick = async () => {
+  const list = [...files.files].sort((a, b) => a.name.localeCompare(b.name));
+  if (!list.length) return alert('Choose at least one screenshot');
+  const shots = [];
+  for (const f of list) shots.push({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) });
+  parent.postMessage({ pluginMessage: {
+    type: 'build', shots,
+    heads: document.getElementById('heads').value.split('\n'),
+    cta: document.getElementById('cta').value
+  } }, '*');
+};
+</script>
