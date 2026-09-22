@@ -16,7 +16,8 @@ store-assets/
     ├── social-uk/          Real app screenshots — UK route (Manchester → Edinburgh)
     ├── social-sri-lanka/   Real app screenshots — Sri Lanka route (Colombo → Trincomalee)
     └── video/
-        └── chargeroute_sri_lanka_ad.mp4   15.5s vertical (1080×1920) animated ad
+        ├── chargeroute_sri_lanka_ad.mp4          15.5s vertical (1080×1920) — motion-graphic ad, static screenshots + Ken Burns + copy
+        └── chargeroute_walkthrough_sri_lanka.mp4 48.9s vertical (1080×2400) — real screen recording of the app in use, captioned
 ```
 
 ## `listing/`
@@ -30,13 +31,22 @@ into the Figma ad-builder plugin (`figma-plugin/`) to produce social ad
 frames (feed / story / landscape).
 
 ## `ads/video/`
-`chargeroute_sri_lanka_ad.mp4` — a 15.5s vertical video ad for the Sri
-Lanka launch (WhatsApp status, Instagram/Facebook Reels & Stories, EV
-community Facebook groups). Built from real screenshots (Colombo →
-Trincomalee route, actual Ceylon Electricity Board charging stop, real
-LKR pricing) with Ken Burns motion and crossfade transitions — not
-narrated, no captions burned in beyond what's shown, silent-friendly.
+Two different videos, for two different jobs:
 
-Source scenes (HTML) live in the session scratchpad, not the repo — say
-the word if you want the video re-cut with different copy/pacing and I'll
-rebuild it from there.
+- **`chargeroute_sri_lanka_ad.mp4`** (15.5s) — a motion-graphic ad: static
+  screenshots + brand copy + Ken Burns pans + crossfades. Best for a feed
+  ad / sponsored post where you want a punchy pitch.
+- **`chargeroute_walkthrough_sri_lanka.mp4`** (48.9s) — a real screen
+  recording of the actual app running on a device: picking a Nissan Leaf,
+  typing Colombo → Trincomalee, watching it calculate, the route drawing
+  itself on the real Google map, and the real Ceylon Electricity Board
+  stop with real LKR pricing. Captioned, crossfaded intro/CTA bookends.
+  Best for "watch it actually work" — community group posts, replies to
+  "does this really work here?", or anywhere skepticism needs proof over
+  a pitch.
+
+Both are silent (no narration/music) — safe for autoplay/muted feeds.
+Source scenes (HTML) and the raw screen recording live in the session
+scratchpad, not the repo — say the word if you want either re-cut with
+different copy, pacing, or a different route/vehicle and I'll rebuild
+from there.
