@@ -62,7 +62,7 @@ screenshots/story if you want more detail)
 ## Screenshots
 
 Real screenshots captured from a running build are in
-`store-assets/screenshots/`:
+`store-assets/listing/` (this folder):
 - `1-route-planner.png` — main route planning screen with a vehicle selected
 - `2-charger-map.png` — the charger map with Google Maps tiles loaded
 
@@ -72,7 +72,7 @@ Settings screen or a completed route with charging stops.
 
 ## Icon & feature graphic
 
-- **App icon (512×512):** `store-assets/playstore-icon-512.png` — ready to upload as-is.
+- **App icon (512×512):** `store-assets/listing/playstore-icon-512.png` — ready to upload as-is.
 - **Feature graphic (1024×500):** not generated — Play requires this banner
   image for the store listing header. I can generate one from the same
   icon design if you want (just say so), or you can make your own.
