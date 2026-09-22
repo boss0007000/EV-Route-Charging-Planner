@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" width="1600" height="500">
+  <title>ChargeRoute — Primary Logo Lockup</title>
+  <defs>
+    <linearGradient id="markGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="55%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+    <filter id="markShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#15803D" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <g id="background">
+    <rect width="1600" height="500" fill="#FFFFFF"/>
+  </g>
+
+  <g id="mark" transform="translate(140,140)" filter="url(#markShadow)">
+    <rect width="220" height="220" rx="48" fill="url(#markGradient)"/>
+    <path d="M89 27 L89 118 L124 118 L124 193 L165 100 L131 100 L165 27 Z" fill="#FFFFFF"/>
+  </g>
+
+  <g id="wordmark" transform="translate(400,0)">
+    <text x="0" y="290" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800"
+      font-size="108" letter-spacing="-2" fill="#111827">ChargeRoute</text>
+  </g>
+</svg>

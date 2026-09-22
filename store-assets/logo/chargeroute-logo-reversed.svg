@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" width="1600" height="500">
+  <title>ChargeRoute — Reversed Logo Lockup (on brand green)</title>
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="45%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+  </defs>
+
+  <g id="background">
+    <rect width="1600" height="500" fill="url(#bgGradient)"/>
+  </g>
+
+  <g id="mark" transform="translate(140,140)">
+    <rect width="220" height="220" rx="48" fill="#FFFFFF"/>
+    <path d="M89 27 L89 118 L124 118 L124 193 L165 100 L131 100 L165 27 Z" fill="#16A34A"/>
+  </g>
+
+  <g id="wordmark" transform="translate(400,0)">
+    <text x="0" y="290" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800"
+      font-size="108" letter-spacing="-2" fill="#FFFFFF">ChargeRoute</text>
+  </g>
+</svg>

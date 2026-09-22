@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>ChargeRoute — App Icon Mark</title>
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="55%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+  </defs>
+
+  <g id="background">
+    <rect width="1024" height="1024" fill="url(#bgGradient)"/>
+  </g>
+
+  <g id="mark" transform="translate(37.65,101.16) scale(3.7349)">
+    <path d="M89 27 L89 118 L124 118 L124 193 L165 100 L131 100 L165 27 Z" fill="#FFFFFF"/>
+  </g>
+</svg>
