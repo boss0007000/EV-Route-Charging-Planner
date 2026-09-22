@@ -192,16 +192,25 @@ function mapOCMItem(item: any): ChargerStation {
   const networkName =
     item.OperatorInfo?.Title ??
     item.OperatorInfo?.WebsiteURL ??
+    addr.Title ??
     'Unknown Network';
 
+  // OCM's AddressLine1 sometimes ships with a trailing comma baked in (e.g.
+  // "A74M Jct 16, "), and AddressLine2 is a real field we weren't including —
+  // trim each part and drop stray trailing commas so joining never produces
+  // double commas or an "Unknown Network"-only address.
   const address = [
     addr.AddressLine1,
+    addr.AddressLine2,
     addr.Town,
     addr.StateOrProvince,
     addr.Postcode,
     addr.Country?.ISOCode,
   ]
-    .filter(Boolean)
+    .map((part: unknown) =>
+      typeof part === 'string' ? part.trim().replace(/,+$/, '').trim() : part,
+    )
+    .filter((part): part is string => typeof part === 'string' && part.length > 0)
     .join(', ');
 
   return {
