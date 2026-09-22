@@ -73,9 +73,7 @@ Settings screen or a completed route with charging stops.
 ## Icon & feature graphic
 
 - **App icon (512×512):** `store-assets/listing/playstore-icon-512.png` — ready to upload as-is.
-- **Feature graphic (1024×500):** not generated — Play requires this banner
-  image for the store listing header. I can generate one from the same
-  icon design if you want (just say so), or you can make your own.
+- **Feature graphic (1024×500):** `store-assets/listing/feature-graphic.png` — ready to upload as-is.
 
 ## Content rating questionnaire — expected answers
 

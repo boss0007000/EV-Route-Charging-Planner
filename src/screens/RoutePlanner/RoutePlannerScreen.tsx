@@ -16,6 +16,7 @@ import {
   SafeAreaView,
   ActivityIndicator,
   Alert,
+  Image,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
@@ -374,7 +375,14 @@ export default function RoutePlannerScreen() {
           keyboardShouldPersistTaps="handled">
           {/* Header */}
           <View style={styles.header}>
-            <Text style={styles.appName}>⚡ ChargeRoute</Text>
+            <View style={styles.brandRow}>
+              <Image
+                source={require('../../assets/images/chargeroute-mark.png')}
+                style={styles.brandMark}
+                resizeMode="contain"
+              />
+              <Text style={styles.appName}>ChargeRoute</Text>
+            </View>
             <Text style={styles.heroTitle}>Plan Your EV Journey</Text>
             <Text style={styles.heroSubtitle}>
               Find the best route. Charge smart. Arrive with confidence.
@@ -530,11 +538,20 @@ const styles = StyleSheet.create({
   header: {
     marginBottom: 20,
   },
+  brandRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  brandMark: {
+    width: 14,
+    height: 24,
+    marginRight: 6,
+  },
   appName: {
     fontSize: 14,
     fontWeight: '700',
     color: COLORS.primary,
-    marginBottom: 8,
   },
   heroTitle: {
     fontSize: 28,

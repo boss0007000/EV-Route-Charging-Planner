@@ -69,3 +69,6 @@ ios-app.OLD_BROKEN_unused/
 
 # Local Claude Code tooling state, not app code
 .claude/
+
+# Adobe Illustrator autosave/lock temp files
+~ai-*.tmp
