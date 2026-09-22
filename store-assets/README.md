@@ -18,7 +18,7 @@ store-assets/
     └── video/
         ├── chargeroute_sri_lanka_ad.mp4          15.5s vertical (1080×1920) — motion-graphic ad, static screenshots + Ken Burns + copy
         ├── chargeroute_walkthrough_sri_lanka.mp4 48.9s vertical (1080×2400) — real screen recording of the app in use, captioned
-        └── chargeroute_3d_sri_lanka.mp4          18.0s vertical (1080×2400) — stylized 3D motion-graphic ad: tilted 3D phone mockups, a 3D map with the route drawing itself and a charging pin popping up, glossy 3D logo/CTA
+        └── chargeroute_3d_sri_lanka.mp4          20.5s vertical (1080×2400) — stylized 3D motion-graphic ad: tilted 3D phone mockups, a 3D map with the REAL Google-Directions route drawing itself road-by-road, a precisely-timed stop highlight (camera push-in + pulse rings) at Dambulla, then continuing to the destination, glossy 3D logo/CTA
 ```
 
 ## `listing/`
@@ -43,12 +43,17 @@ Three different videos, for three different jobs:
   itself on the real Google map, and the real Ceylon Electricity Board
   stop with real LKR pricing. Captioned, crossfaded intro/CTA bookends.
   Best for "watch it actually work" — proof over pitch.
-- **`chargeroute_3d_sri_lanka.mp4`** (18.0s) — the "fancy" version: a
+- **`chargeroute_3d_sri_lanka.mp4`** (20.5s) — the "fancy" version: a
   stylized 3D motion-graphic spot. 3D-tilted phone mockups (real app
   screenshots on the screen face) float in with perspective and glow; a
-  3D tilted map card draws the Colombo → Trincomalee route stroke-by-
-  stroke, the Dambulla charging pin pops up with a pulse ring, and a
-  charging-stop info card flies in; closes on a glossy 3D logo spin and a
+  3D tilted map card draws the **actual road-following route** — the
+  real polyline pulled from the Google Directions API for Colombo →
+  Dambulla → Trincomalee, not a stylized curve — with a glowing dot
+  tracing the leading edge as it draws. When the line reaches the
+  Dambulla charging stop, the camera pushes in, the pin pops with a
+  pulse-ring burst, and a charging-stop info card flies in — a deliberate
+  pause before the route continues drawing on to Trincomalee, where the
+  destination pin pops on arrival. Closes on a glossy 3D logo spin and a
   bouncing "Get it on Google Play" button. Built frame-by-frame from CSS
   3D transforms (perspective + rotateX/Y/Z + translateZ), not WebGL —
   each frame independently computed from a time value and rendered via
