@@ -1,11 +1,11 @@
 buildscript {
     ext {
-        buildToolsVersion = "35.0.0"
+        buildToolsVersion = "37.0.0"
         minSdkVersion = 24
-        compileSdkVersion = 36
+        compileSdkVersion = 37
         targetSdkVersion = 36
-        ndkVersion = "26.1.10909125"
-        kotlinVersion = "1.9.24"
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "2.2.0"
         // Must match the play-services-location version react-native-maps hardcodes,
         // otherwise react-native-geolocation-service compiles against a different
         // API shape (FusedLocationProviderClient class vs interface) and crashes

@@ -6,29 +6,24 @@
  *   charger_stations — individual stations cached per tile
  */
 
-import SQLite from 'react-native-sqlite-storage';
+import {open, type DB} from '@op-engineering/op-sqlite';
 import {DB_NAME, DB_VERSION} from '../constants/config';
 
-SQLite.enablePromise(true);
+let db: DB | null = null;
 
-let db: SQLite.SQLiteDatabase | null = null;
-
-export async function getDb(): Promise<SQLite.SQLiteDatabase> {
+export async function getDb(): Promise<DB> {
   if (db) return db;
-  db = await SQLite.openDatabase({
-    name: DB_NAME,
-    location: 'default',
-  });
+  db = open({name: DB_NAME});
   return db;
 }
 
 export async function initDatabase(): Promise<void> {
   const database = await getDb();
 
-  await database.executeSql(`PRAGMA journal_mode=WAL;`);
+  await database.execute(`PRAGMA journal_mode=WAL;`);
 
   // ── Vehicles ────────────────────────────────────────────────────────────────
-  await database.executeSql(`
+  await database.execute(`
     CREATE TABLE IF NOT EXISTS vehicles (
       id                              INTEGER PRIMARY KEY AUTOINCREMENT,
       manufacturer                    TEXT NOT NULL,
@@ -122,18 +117,18 @@ export async function initDatabase(): Promise<void> {
     );
   `);
 
-  await database.executeSql(
+  await database.execute(
     'CREATE INDEX IF NOT EXISTS idx_vehicles_manufacturer ON vehicles (manufacturer);',
   );
-  await database.executeSql(
+  await database.execute(
     'CREATE INDEX IF NOT EXISTS idx_vehicles_model ON vehicles (model);',
   );
-  await database.executeSql(
+  await database.execute(
     'CREATE INDEX IF NOT EXISTS idx_vehicles_year ON vehicles (model_year);',
   );
 
   // ── Geo-tile cache ───────────────────────────────────────────────────────────
-  await database.executeSql(`
+  await database.execute(`
     CREATE TABLE IF NOT EXISTS charger_tile_cache (
       tile_key    TEXT PRIMARY KEY,
       min_lat     REAL NOT NULL,
@@ -145,7 +140,7 @@ export async function initDatabase(): Promise<void> {
   `);
 
   // ── Charger stations ─────────────────────────────────────────────────────────
-  await database.executeSql(`
+  await database.execute(`
     CREATE TABLE IF NOT EXISTS charger_stations (
       id                     TEXT PRIMARY KEY,
       tile_key               TEXT NOT NULL,
@@ -162,10 +157,10 @@ export async function initDatabase(): Promise<void> {
     );
   `);
 
-  await database.executeSql(
+  await database.execute(
     'CREATE INDEX IF NOT EXISTS idx_charger_tile ON charger_stations (tile_key);',
   );
-  await database.executeSql(
+  await database.execute(
     'CREATE INDEX IF NOT EXISTS idx_charger_lat_lng ON charger_stations (latitude, longitude);',
   );
 }

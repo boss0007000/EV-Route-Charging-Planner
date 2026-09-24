@@ -63,14 +63,13 @@ export async function getMissingOrExpiredTileKeys(
   if (tileKeys.length === 0) return [];
   const db = await getDb();
   const placeholders = tileKeys.map(() => '?').join(',');
-  const [results] = await db.executeSql(
+  const {rows} = await db.execute(
     `SELECT tile_key, fetched_at FROM charger_tile_cache WHERE tile_key IN (${placeholders})`,
     tileKeys,
   );
 
   const cached = new Map<string, number>();
-  for (let i = 0; i < results.rows.length; i++) {
-    const row = results.rows.item(i);
+  for (const row of rows) {
     cached.set(row.tile_key as string, row.fetched_at as number);
   }
 
@@ -93,23 +92,23 @@ export async function cacheChargersForTile(
   const bounds = tileKeyToBounds(tileKey);
   const now = Date.now();
 
-  await db.transaction(tx => {
+  await db.transaction(async tx => {
     // Upsert tile record
-    tx.executeSql(
+    await tx.execute(
       `INSERT OR REPLACE INTO charger_tile_cache (tile_key, min_lat, max_lat, min_lng, max_lng, fetched_at)
        VALUES (?, ?, ?, ?, ?, ?)`,
       [tileKey, bounds.minLat, bounds.maxLat, bounds.minLng, bounds.maxLng, now],
     );
 
     // Delete stale stations for this tile
-    tx.executeSql(
+    await tx.execute(
       'DELETE FROM charger_stations WHERE tile_key = ?',
       [tileKey],
     );
 
     // Insert new stations
     for (const station of stations) {
-      tx.executeSql(
+      await tx.execute(
         `INSERT OR REPLACE INTO charger_stations
          (id, tile_key, network_name, address, latitude, longitude,
           connectors_json, max_power_kw, pricing_info, is_live_status_avail, last_updated)
@@ -129,6 +128,8 @@ export async function cacheChargersForTile(
         ],
       );
     }
+
+    await tx.commit();
   });
 }
 
@@ -156,17 +157,13 @@ export async function getCachedChargersByBounds(
   maxLng: number,
 ): Promise<ChargerStation[]> {
   const db = await getDb();
-  const [results] = await db.executeSql(
+  const {rows} = await db.execute(
     `SELECT cs.* FROM charger_stations cs
      WHERE cs.latitude BETWEEN ? AND ?
        AND cs.longitude BETWEEN ? AND ?`,
     [minLat, maxLat, minLng, maxLng],
   );
-  const stations: ChargerStation[] = [];
-  for (let i = 0; i < results.rows.length; i++) {
-    stations.push(rowToStation(results.rows.item(i)));
-  }
-  return stations;
+  return rows.map(rowToStation);
 }
 
 /** Get cached chargers within radius (km) of a point, using bounding-box approximation */
@@ -193,13 +190,13 @@ export async function purgeExpiredCache(
   const db = await getDb();
   const expiryCutoff = Date.now() - ttlMs;
   // Delete stations for expired tiles first (FK)
-  await db.executeSql(
+  await db.execute(
     `DELETE FROM charger_stations WHERE tile_key IN (
        SELECT tile_key FROM charger_tile_cache WHERE fetched_at < ?
      )`,
     [expiryCutoff],
   );
-  await db.executeSql(
+  await db.execute(
     'DELETE FROM charger_tile_cache WHERE fetched_at < ?',
     [expiryCutoff],
   );
