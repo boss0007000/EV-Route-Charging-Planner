@@ -13,6 +13,7 @@
 import {
   getDirections,
   pointAtDistanceKm,
+  splitPolylineAtDistanceKm,
   decodePolyline,
 } from './googleMaps';
 import {fetchChargersNearPoint} from './openChargeMap';
@@ -227,11 +228,10 @@ export async function calculateRoute(
       distToChargerKm,
     );
 
-    // Leg from current position to charger
-    const legPolyline = remainingPolyline.slice(
-      0,
-      Math.ceil(remainingPolyline.length * (distToChargerKm / remainingDistanceKm)),
-    );
+    // Leg from current position to charger — split by actual cumulative
+    // distance, not point-count proportion (see splitPolylineAtDistanceKm).
+    const {leg: legPolyline, remaining: nextRemainingPolyline} =
+      splitPolylineAtDistanceKm(remainingPolyline, distToChargerKm);
 
     legs.push({
       from:
@@ -275,7 +275,7 @@ export async function calculateRoute(
     currentBattery = chargeToPercent;
     coveredKm += distToChargerKm;
     startCoord = charger.coordinate;
-    remainingPolyline = remainingPolyline.slice(legPolyline.length);
+    remainingPolyline = nextRemainingPolyline;
     stopCount++;
   }
 

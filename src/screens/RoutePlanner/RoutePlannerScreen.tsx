@@ -13,13 +13,13 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  SafeAreaView,
   ActivityIndicator,
   Alert,
   Image,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import MapView, {Polyline, Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
 import VehicleSelector from '../../components/VehicleSelector/VehicleSelector';
@@ -257,7 +257,7 @@ export default function RoutePlannerScreen() {
       : undefined;
 
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
         <ScrollView>
           {/* Map Preview */}
           {allPolylinePoints.length > 0 && (
@@ -366,7 +366,7 @@ export default function RoutePlannerScreen() {
 
   // ── Render: Input ─────────────────────────────────────────────────────────
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         style={styles.flex}>

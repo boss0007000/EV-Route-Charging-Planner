@@ -11,9 +11,9 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  SafeAreaView,
   Alert,
 } from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {useAppSettings} from '../../context/AppSettingsContext';
 import {COLORS} from '../../constants/colors';
 import {DEFAULT_ROUTE_SETTINGS} from '../../types';
@@ -71,7 +71,7 @@ export default function SettingsScreen() {
   }, [updateSettings]);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}>⚙️ Route Settings</Text>
         <Text style={styles.subtitle}>
