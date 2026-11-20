@@ -1,0 +1,65 @@
+name: Build & upload release to Play Console
+
+# Builds a signed release AAB and uploads it to the Play Console "production"
+# track as a DRAFT. Nothing goes live from this workflow — a draft release
+# sits in Play Console until a human opens it and clicks "Review release" ->
+# "Start rollout to Production". That review/approval step always happens
+# in the Play Console UI, by a person with release access, never here.
+#
+# Trigger: push a tag matching "release-*" (e.g. `git tag release-6 && git
+# push origin release-6`), or run it manually from the Actions tab.
+on:
+  push:
+    tags:
+      - 'release-*'
+  workflow_dispatch: {}
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install JS dependencies
+        run: npm ci
+
+      - name: Write .env
+        run: |
+          echo "GOOGLE_MAPS_API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" >> .env
+          echo "OPEN_CHARGE_MAP_API_KEY=${{ secrets.OPEN_CHARGE_MAP_API_KEY }}" >> .env
+
+      - name: Decode upload keystore
+        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/app/chargeroute-upload.keystore
+
+      - name: Build signed release AAB
+        working-directory: android
+        run: ./gradlew bundleRelease
+        env:
+          ORG_GRADLE_PROJECT_MYAPP_UPLOAD_STORE_FILE: chargeroute-upload.keystore
+          ORG_GRADLE_PROJECT_MYAPP_UPLOAD_STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ORG_GRADLE_PROJECT_MYAPP_UPLOAD_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ORG_GRADLE_PROJECT_MYAPP_UPLOAD_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+
+      - name: Upload AAB as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-aab
+          path: android/app/build/outputs/bundle/release/app-release.aab
+
+      - name: Upload to Play Console (draft — requires manual rollout in Play Console)
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.chargeroute
+          releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
+          track: production
+          status: draft
