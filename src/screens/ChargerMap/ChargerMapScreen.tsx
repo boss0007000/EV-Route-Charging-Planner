@@ -21,10 +21,9 @@ import {
   Switch,
   TextInput,
   ActivityIndicator,
-  SafeAreaView,
-  Platform,
   Alert,
 } from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import MapView, {
   Marker,
   Region,
@@ -233,7 +232,10 @@ export default function ChargerMapScreen() {
       </MapView>
 
       {/* Top bar */}
-      <SafeAreaView style={styles.topBar} pointerEvents="box-none">
+      <SafeAreaView
+        style={styles.topBar}
+        edges={['top', 'left', 'right']}
+        pointerEvents="box-none">
         <View style={styles.topBarInner}>
           {/* Status badge */}
           {loading ? (
@@ -394,7 +396,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: Platform.OS === 'android' ? 40 : 8,
+    paddingTop: 8,
     paddingBottom: 8,
   },
   statusBadge: {

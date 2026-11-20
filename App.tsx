@@ -36,7 +36,7 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaProvider>
       <AppSettingsProvider>
-        <StatusBar barStyle="dark-content" backgroundColor={COLORS.background} />
+        <StatusBar barStyle="dark-content" />
         <NavigationContainer>
           <Tab.Navigator
             screenOptions={({route}) => ({

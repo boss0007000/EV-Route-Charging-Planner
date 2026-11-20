@@ -93,42 +93,33 @@ function rowToVehicle(row: any): Vehicle {
 /** Return all vehicles, ordered by manufacturer + model + year */
 export async function getAllVehicles(): Promise<Vehicle[]> {
   const db = await getDb();
-  const [results] = await db.executeSql(
+  const {rows} = await db.execute(
     'SELECT * FROM vehicles ORDER BY manufacturer, model, model_year DESC',
   );
-  const vehicles: Vehicle[] = [];
-  for (let i = 0; i < results.rows.length; i++) {
-    vehicles.push(rowToVehicle(results.rows.item(i)));
-  }
-  return vehicles;
+  return rows.map(rowToVehicle);
 }
 
 /** Full-text search by manufacturer or model (case-insensitive) */
 export async function searchVehicles(query: string): Promise<Vehicle[]> {
   const db = await getDb();
   const pattern = `%${query.toLowerCase()}%`;
-  const [results] = await db.executeSql(
+  const {rows} = await db.execute(
     `SELECT * FROM vehicles
      WHERE LOWER(manufacturer) LIKE ? OR LOWER(model) LIKE ? OR LOWER(brand) LIKE ?
      ORDER BY manufacturer, model, model_year DESC`,
     [pattern, pattern, pattern],
   );
-  const vehicles: Vehicle[] = [];
-  for (let i = 0; i < results.rows.length; i++) {
-    vehicles.push(rowToVehicle(results.rows.item(i)));
-  }
-  return vehicles;
+  return rows.map(rowToVehicle);
 }
 
 /** Get a single vehicle by id */
 export async function getVehicleById(id: number): Promise<Vehicle | null> {
   const db = await getDb();
-  const [results] = await db.executeSql(
-    'SELECT * FROM vehicles WHERE id = ?',
-    [id],
-  );
-  if (results.rows.length === 0) return null;
-  return rowToVehicle(results.rows.item(0));
+  const {rows} = await db.execute('SELECT * FROM vehicles WHERE id = ?', [
+    id,
+  ]);
+  if (rows.length === 0) return null;
+  return rowToVehicle(rows[0]);
 }
 
 /** Insert a new vehicle. Returns the new row id. */
@@ -136,7 +127,7 @@ export async function insertVehicle(
   v: Omit<Vehicle, 'id'>,
 ): Promise<number> {
   const db = await getDb();
-  const [result] = await db.executeSql(
+  const {insertId} = await db.execute(
     `INSERT INTO vehicles (
       manufacturer, brand, model, trim, model_year,
       usable_capacity_kwh,
@@ -179,13 +170,13 @@ export async function insertVehicle(
       v.lastUpdated, v.dataSource, v.notes,
     ],
   );
-  return result.insertId;
+  return insertId as number;
 }
 
 /** Update an existing vehicle */
 export async function updateVehicle(v: Vehicle): Promise<void> {
   const db = await getDb();
-  await db.executeSql(
+  await db.execute(
     `UPDATE vehicles SET
       manufacturer=?, brand=?, model=?, trim=?, model_year=?,
       usable_capacity_kwh=?,
@@ -217,7 +208,7 @@ export async function updateVehicle(v: Vehicle): Promise<void> {
 /** Delete a vehicle by id */
 export async function deleteVehicle(id: number): Promise<void> {
   const db = await getDb();
-  await db.executeSql('DELETE FROM vehicles WHERE id = ?', [id]);
+  await db.execute('DELETE FROM vehicles WHERE id = ?', [id]);
 }
 
 /** Check whether the vehicles table is populated; seed if empty */
@@ -225,8 +216,8 @@ export async function seedVehiclesIfEmpty(
   seedData: Omit<Vehicle, 'id'>[],
 ): Promise<void> {
   const db = await getDb();
-  const [result] = await db.executeSql('SELECT COUNT(*) as cnt FROM vehicles');
-  const count = result.rows.item(0).cnt as number;
+  const {rows} = await db.execute('SELECT COUNT(*) as cnt FROM vehicles');
+  const count = rows[0].cnt as number;
   if (count === 0) {
     for (const v of seedData) {
       await insertVehicle(v);

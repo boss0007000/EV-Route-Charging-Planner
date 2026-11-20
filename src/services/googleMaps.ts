@@ -238,6 +238,58 @@ export function pointAtDistanceKm(
   return polylinePoints[polylinePoints.length - 1];
 }
 
+/**
+ * Split a polyline into the leg driven up to targetDistanceKm and the
+ * remaining polyline past that point, splitting at the exact interpolated
+ * distance rather than by point-count proportion.
+ *
+ * Point-count proportion (e.g. "take the first X% of points for X% of the
+ * distance") assumes points are evenly spaced by distance along the route.
+ * Real Google Directions polylines are not — they're dense through turns
+ * and urban streets, sparse on straight highway stretches — so that
+ * approximation can leave `remaining` still starting almost exactly where
+ * it began even after "consuming" a leg, silently stalling route planning
+ * over many iterations.
+ */
+export function splitPolylineAtDistanceKm(
+  polylinePoints: LatLng[],
+  targetDistanceKm: number,
+): {leg: LatLng[]; remaining: LatLng[]} {
+  if (polylinePoints.length === 0) return {leg: [], remaining: []};
+  if (targetDistanceKm <= 0) {
+    return {leg: [polylinePoints[0]], remaining: polylinePoints};
+  }
+
+  let cumulativeKm = 0;
+
+  for (let i = 1; i < polylinePoints.length; i++) {
+    const prev = polylinePoints[i - 1];
+    const curr = polylinePoints[i];
+    const segmentKm = haversineKm(prev, curr);
+
+    if (cumulativeKm + segmentKm >= targetDistanceKm) {
+      const remainingInSegment = targetDistanceKm - cumulativeKm;
+      const fraction = segmentKm > 0 ? remainingInSegment / segmentKm : 0;
+      const splitPoint: LatLng = {
+        latitude: prev.latitude + fraction * (curr.latitude - prev.latitude),
+        longitude: prev.longitude + fraction * (curr.longitude - prev.longitude),
+      };
+      return {
+        leg: [...polylinePoints.slice(0, i), splitPoint],
+        remaining: [splitPoint, ...polylinePoints.slice(i)],
+      };
+    }
+
+    cumulativeKm += segmentKm;
+  }
+
+  // Target is at or beyond the whole polyline's length
+  return {
+    leg: polylinePoints,
+    remaining: [polylinePoints[polylinePoints.length - 1]],
+  };
+}
+
 function haversineKm(a: LatLng, b: LatLng): number {
   const R = 6371;
   const dLat = ((b.latitude - a.latitude) * Math.PI) / 180;

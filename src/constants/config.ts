@@ -26,8 +26,13 @@ export const ROUTE_CONSTANTS = {
   geoTileDegrees: 0.1,           // ~11 km grid cells
   chargerSearchRadiusKm: 20,     // radius around "charge needed" point
   // If nothing is found at chargerSearchRadiusKm, retry with these progressively
-  // wider radii before giving up on the stop entirely.
-  chargerSearchRadiusExpansionsKm: [40, 75, 120],
+  // wider radii before giving up on the stop entirely. Kept deliberately tight:
+  // a charger found via a much wider radius (e.g. 100+ km) isn't a usable
+  // detour, it's a different trip — accepting one breaks route-continuation
+  // bookkeeping (the leg "arrives" barely any further than it started) and
+  // silently turns a genuinely infeasible route (no charger anywhere near
+  // where charging is needed) into a stuck loop instead of a clear error.
+  chargerSearchRadiusExpansionsKm: [40],
   mapPanDebounceMs: 600,         // wait before fetching after pan
   chargerCacheTtlMs: 24 * 60 * 60 * 1000, // 24 h default TTL
 };

@@ -63,7 +63,7 @@ jest.mock('../src/database/chargerCache', () => ({
   getCachedChargersNear: jest.fn(async () => []),
 }));
 
-import {calculateRoute, RouteInfeasibleError, RouteTooLongError} from '../src/services/routeCalculation';
+import {calculateRoute, RouteInfeasibleError, RouteTooLongError, computeMaxChargingStops} from '../src/services/routeCalculation';
 
 // ─── Real validation logic, copied verbatim from RoutePlannerScreen.tsx:130-137 ──
 function validationMessage(
@@ -200,11 +200,11 @@ function batteryAfterDrivingOracle(currentBattery: number, capKwh: number, effWh
   const remainingWh = (currentBattery / 100) * totalWh - usedWh;
   return Math.max(0, (remainingWh / totalWh) * 100);
 }
-function oracleSimulate(startBattery: number, capKwh: number, effWhKm: number, totalKm: number, reservePct: number, chargeToPct: number) {
+function oracleSimulate(startBattery: number, capKwh: number, effWhKm: number, totalKm: number, reservePct: number, chargeToPct: number, vehicle: Vehicle) {
   let battery = startBattery;
   let covered = 0;
   let stops = 0;
-  const MAX = 5;
+  const MAX = computeMaxChargingStops(vehicle, effWhKm, totalKm, reservePct, chargeToPct);
   while (stops < MAX) {
     const remaining = totalKm - covered;
     const neededAt = findChargeNeededPointKm(battery, capKwh, effWhKm, remaining, reservePct);
@@ -355,7 +355,7 @@ test('execute all 1000 QA cases', async () => {
           }
 
           // Assertion b: stop count matches the independent oracle.
-          const oracle = oracleSimulate(c.startBattery, vehicle!.usableCapacityKwh, efficiencyWhPerKm, mockCtx.distanceKm, c.reserve, c.chargeTo);
+          const oracle = oracleSimulate(c.startBattery, vehicle!.usableCapacityKwh, efficiencyWhPerKm, mockCtx.distanceKm, c.reserve, c.chargeTo, vehicle!);
           if (oracle.outcome === 'TOO_LONG') {
             failing.push('a');
             failureMode = failureMode || 'SILENT_INCOMPLETE_ROUTE';
@@ -421,7 +421,7 @@ test('execute all 1000 QA cases', async () => {
             actualErrorMessage = err.message;
             stopsReturned = err.stopsPlanned;
             totalDistanceKm = err.totalDistanceKm;
-            const oracle = oracleSimulate(c.startBattery, vehicle!.usableCapacityKwh, efficiencyWhPerKm, mockCtx.distanceKm, c.reserve, c.chargeTo);
+            const oracle = oracleSimulate(c.startBattery, vehicle!.usableCapacityKwh, efficiencyWhPerKm, mockCtx.distanceKm, c.reserve, c.chargeTo, vehicle!);
             if (oracle.outcome !== 'TOO_LONG') {
               failing.push('a');
               failureMode = 'UNEXPECTED_ROUTE_TOO_LONG';
