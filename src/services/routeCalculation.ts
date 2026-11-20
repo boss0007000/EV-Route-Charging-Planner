@@ -38,7 +38,64 @@ import {
 } from '../types';
 import {ROUTE_CONSTANTS} from '../constants/config';
 
-const MAX_CHARGING_STOPS = 5;
+// Hard ceiling on charging stops per route, regardless of how the dynamic
+// estimate below comes out. This is the actual abuse guard: it bounds the
+// number of charger lookups (and thus OCM API calls / cache queries) any
+// single route request can trigger, independent of vehicle or distance
+// inputs. 60 stops covers genuinely enormous trips (e.g. Colombo → Chennai
+// driving distance, or further, in a short-range vehicle) with room to
+// spare, while still making a runaway loop from a degenerate input
+// (near-zero range, zero efficiency) fail fast with RouteTooLongError
+// instead of hammering the charger API indefinitely.
+const ABSOLUTE_MAX_CHARGING_STOPS = 60;
+
+// Floor so very short trips that still need a couple of stops (e.g. a
+// low-range vehicle on a medium trip) aren't under-provisioned by rounding.
+const MIN_CHARGING_STOPS = 5;
+
+/**
+ * How many charging stops a trip should be allowed before we give up and
+ * report it as too long. Fixed caps don't work here: a day trip and a
+ * cross-country drive need very different numbers of stops, and the right
+ * number depends on the vehicle's actual per-charge range, not just
+ * distance. So this estimates how many stops the trip *should* need from
+ * the vehicle's effective range per charge cycle, then adds generous
+ * headroom for real-world detours (charger search missing the optimal
+ * stop, suboptimal charger placement, etc.) — capped by
+ * ABSOLUTE_MAX_CHARGING_STOPS so the headroom itself can't be abused.
+ */
+export function computeMaxChargingStops(
+  vehicle: Vehicle,
+  efficiencyWhPerKm: number,
+  totalDistanceKm: number,
+  reserveBatteryPercent: number,
+  maxChargeTargetPercent: number,
+): number {
+  const usableSwingPercent = maxChargeTargetPercent - reserveBatteryPercent;
+
+  if (usableSwingPercent <= 0 || efficiencyWhPerKm <= 0) {
+    // Degenerate configuration (e.g. charge target at or below reserve) —
+    // there's no sensible estimate to make here, so fall back to the
+    // absolute ceiling rather than looping unboundedly.
+    return ABSOLUTE_MAX_CHARGING_STOPS;
+  }
+
+  const effectiveRangePerStopKm =
+    ((usableSwingPercent / 100) * vehicle.usableCapacityKwh * 1000) /
+    efficiencyWhPerKm *
+    ROUTE_CONSTANTS.safetyBufferFactor;
+
+  const expectedStops = Math.ceil(totalDistanceKm / effectiveRangePerStopKm);
+
+  // 50% headroom + a flat buffer of 3, so the planner isn't forced to find
+  // the mathematically optimal charger at every single stop.
+  const withHeadroom = Math.ceil(expectedStops * 1.5) + 3;
+
+  return Math.min(
+    ABSOLUTE_MAX_CHARGING_STOPS,
+    Math.max(MIN_CHARGING_STOPS, withHeadroom),
+  );
+}
 
 // ─── Errors ───────────────────────────────────────────────────────────────────
 
@@ -75,9 +132,10 @@ export class RouteInfeasibleError extends Error {
 }
 
 /**
- * Thrown when a trip needs more charging stops than MAX_CHARGING_STOPS
- * supports. Every candidate charger along the way was reachable — the
- * planner just ran out of stops before running out of road. Previously this
+ * Thrown when a trip needs more charging stops than the computed per-trip
+ * cap allows (see computeMaxChargingStops). Every candidate charger along
+ * the way was reachable — the planner just ran out of stops before running
+ * out of road. Previously this
  * case fell through silently and returned a RouteResult whose legs stopped
  * short of the real destination, which the UI then rendered as a completed,
  * successful plan.
@@ -137,7 +195,15 @@ export async function calculateRoute(
   let remainingPolyline = fullRoute.polylinePoints;
   let reachedDestination = false;
 
-  while (stopCount < MAX_CHARGING_STOPS) {
+  const maxChargingStops = computeMaxChargingStops(
+    vehicle,
+    efficiencyWhPerKm,
+    fullRoute.distanceKm,
+    settings.reserveBatteryPercent,
+    settings.maxChargeTargetPercent,
+  );
+
+  while (stopCount < maxChargingStops) {
     const remainingDistanceKm = fullRoute.distanceKm - coveredKm;
 
     // Check if we can make it to the destination from here
@@ -280,13 +346,13 @@ export async function calculateRoute(
   }
 
   if (!reachedDestination) {
-    // Every one of the MAX_CHARGING_STOPS stops found a charger and
+    // Every one of the maxChargingStops stops found a charger and
     // succeeded — the trip is physically reachable, it just needs more
     // waypoints than this planner supports in one pass. Surfacing this as
     // an error (rather than returning the partial route) matches how
     // RouteInfeasibleError is already handled by the UI.
     throw new RouteTooLongError(
-      `This trip needs more than ${MAX_CHARGING_STOPS} charging stops to complete — ` +
+      `This trip needs more than ${maxChargingStops} charging stops to complete — ` +
         `only reached ${Math.round(coveredKm)} km of ${Math.round(fullRoute.distanceKm)} km ` +
         `before running out of planning steps. Try a higher starting battery percentage, ` +
         `a higher arrival battery target, or split this into multiple trips.`,
